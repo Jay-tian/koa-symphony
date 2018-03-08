@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "cross-env": "^5.1.3",
+    "jay-webpack-scaffold": "^1.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "scripts": {
+    "build": "cross-env setting_path='/webpack/setting.js' NODE_ENV=development webpack -p --config './node_modules/jay-webpack-scaffold/webpack/webpack.babel.js'",
+    "dev": "cross-env setting_path='/webpack/setting.js' NODE_ENV=production webpack-dev-server --color --config './node_modules/jay-webpack-scaffold/webpack/webpack.babel.js'",
+    "fix": "./node_modules/.bin/eslint --fix"
+  }
+}
