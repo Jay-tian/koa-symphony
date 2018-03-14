@@ -7,11 +7,13 @@
   },
   "devDependencies": {
     "eslint": "^4.18.2",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.7.0",
+    "koa-webpack": "^3.0.2",
+    "webpack-hot-middleware": "^2.21.2"
   },
   "scripts": {
-    "build": "cross-env setting_path='/webpack/setting.js' NODE_ENV=development webpack -p --config './node_modules/jay-webpack-scaffold/webpack/webpack.babel.js'",
-    "dev": "cross-env setting_path='/webpack/setting.js' NODE_ENV=production webpack-dev-server --color --config './node_modules/jay-webpack-scaffold/webpack/webpack.babel.js'",
+    "build": "cross-env NODE_ENV=development webpack -p --config './webpack/webpack.config.js'",
+    "dev": "cross-env NODE_ENV=production webpack-dev-server --color --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix"
   }
 }
