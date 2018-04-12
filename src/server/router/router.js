@@ -1,4 +1,11 @@
 
 module.exports = {
-  login: 'Login',
+  login: {
+    path: '/login',
+    method: 'login'
+  },
+  default: {
+    path: '/',
+    method: 'index'
+  }
 };

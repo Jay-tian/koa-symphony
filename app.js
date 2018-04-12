@@ -1,13 +1,17 @@
+// const routers = require(rootPath+'config/router.js');
+// const rootPath = './src/server/';
 const Koa = require('koa'); 
 const Router = require('koa-router'); 
-const app = new Koa(); 
-const router = new Router(); 
+var fs = require('fs');
+
+const app = new Koa();
+const router = new Router();
 router.get('/', async (ctx) => { 
-  let html = ` <ul> <li><a href="/hello">helloworld</a></li> <li><a href="/about">about</a></li> </ul> ` ;
-  ctx.body = html 
-}).get('/hello', async (ctx) => { ctx.body = 'helloworld' })
-.get('/about', async (ctx) => { ctx.body = 'about' });
+  let html = `<ul> <li><a href="/">/</a></li> <li><a href="/login">login</a></li> </ul> ` ;
+  ctx.body = html
+});
 
 app.use(router.routes(), router.allowedMethods());
 app.listen(3000);
+
 console.log('app started at port 3000...');

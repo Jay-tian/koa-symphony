@@ -1,0 +1,1 @@
+exports.index = async (ctx) => { ctx.body = 'helloworld' };
