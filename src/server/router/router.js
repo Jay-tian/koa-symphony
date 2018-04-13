@@ -1,11 +1,12 @@
 
 module.exports = {
+  profix: '/',
   login: {
-    path: '/login',
+    path: 'login',
     method: 'login'
   },
   default: {
-    path: '/',
+    path: '',
     method: 'index'
   }
 };
