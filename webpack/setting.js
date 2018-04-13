@@ -3,8 +3,8 @@ const rootPath = process.cwd();
 
 let setting = {
   entry: rootPath + '/src/client/js/',
-  output: rootPath + '/dist/',
-  publicPath: '/dist/',
+  output: rootPath + '/static/',
+  publicPath: '/static/',
   author: 'tianshengjie',
 };
 

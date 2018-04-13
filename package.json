@@ -4,6 +4,7 @@
     "jay-webpack-scaffold": "^1.0.6",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
     "nodemon": "^1.17.3"
   },
   "devDependencies": {
