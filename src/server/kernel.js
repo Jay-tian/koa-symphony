@@ -1,28 +1,11 @@
 const Koa = require('koa'); 
 const koaStatic = require('koa-static');
 const path = require('path');
-const parameters = require('./config/parameters.js');
+const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
 const app = new Koa();
-let dbConfig = parameters.dbConfig;
+const db = require('db/init.js');
 
-const Sequelize = require('sequelize');
-const db = new Sequelize(
-  dbConfig.database, 
-  dbConfig.username, 
-  dbConfig.password, {
-    host: dbConfig.host,
-    dialect: 'mysql',
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    },
-    // 请参考 Querying - 查询 操作符 章节
-    operatorsAliases: false
-  }
-);
 app.context.db = db;
 // const User = sequelize.define('user', {
 //   username: Sequelize.STRING,

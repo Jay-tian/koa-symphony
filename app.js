@@ -1,3 +1,6 @@
+process.env.NODE_PATH = __dirname + '/src/server/';
+require('module').Module._initPaths();
+
 const Router = require('koa-router'); 
 const app = require('./src/server/kernel.js');
 const router = new Router();
