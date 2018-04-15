@@ -1,5 +1,33 @@
-<ul> 
-    <li><a href="/">/</a></li> 
-    <li><a href="/login"></a></li> 
-    <li><a href="/login"></a></li> 
-</ul> 
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>
+    
+  </title>
+  <meta name="keywords" content=""/>
+  <meta name="description" content="">
+  <meta content="" name="csrf-token"/>
+  <link rel="icon" href="" type="image/x-icon"/>
+  <link rel="shortcut icon" href="" type="image/x-icon" media="screen"/>
+</head>
+<body >
+{% block body %}
+  <div>
+    {% block header %}
+    44
+    {% endblock %}
+    {% block main %}
+    {% endblock %} 
+    {% block bottom %}
+    {% endblock %}
+  </div>
+  <div id="login-modal" class="modal" data-url=""></div>
+  <div id="modal" class="modal"></div>
+{% endblock %}
+</body>
+</html>

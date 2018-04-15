@@ -3,16 +3,6 @@ const app = require('./src/server/kernel.js');
 const router = new Router();
 
 
-// router.get('/', function *(){
-//   let data = {
-//     data: 'hello koa2',
-//   }
-//   console.log(ctx.render('index', data));
-//   yield this.render('index.xtpl', data);
-//   //ctx.render('index', data);
-//   //await ctx.render('index', data);
-// });
-
 router.get('/', async function (ctx, next) {
   return ctx.render('index.twig');
 });
