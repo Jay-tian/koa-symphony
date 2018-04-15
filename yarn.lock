@@ -2220,12 +2220,6 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
-consolidate@^0.15.0:
-  version "0.15.1"
-  resolved "https://registry.npmjs.org/consolidate/-/consolidate-0.15.1.tgz#21ab043235c71a07d45d9aad98593b0dba56bab7"
-  dependencies:
-    bluebird "^3.1.1"
-
 constants-browserify@^1.0.0, constants-browserify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
@@ -2844,10 +2838,6 @@ editorconfig@^0.13.2:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
-
-ejs@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.npmjs.org/ejs/-/ejs-2.5.8.tgz#2ab6954619f225e6193b7ac5f7c39c48fefe4380"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.36"
@@ -3496,6 +3486,10 @@ for-own@^0.1.4:
 foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.npmjs.org/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
+
+foreachasync@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/foreachasync/-/foreachasync-3.0.0.tgz#5502987dc8714be3392097f32e0071c9dee07cf6"
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -4920,17 +4914,6 @@ koa-static@^4.0.2:
     debug "^2.6.8"
     koa-send "^4.1.0"
 
-koa-views@^6.1.4:
-  version "6.1.4"
-  resolved "https://registry.npmjs.org/koa-views/-/koa-views-6.1.4.tgz#595eb683ca17d8dfaa1d100b42ba4e34c762154d"
-  dependencies:
-    consolidate "^0.15.0"
-    debug "^3.1.0"
-    get-paths "^0.0.2"
-    koa-send "^4.0.0"
-    mz "^2.4.0"
-    pretty "^2.0.0"
-
 koa-webpack@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/koa-webpack/-/koa-webpack-3.0.2.tgz#5a0604d476ec5ab3f12f02fd5bf8406a77b49ed2"
@@ -5130,6 +5113,10 @@ lock-verify@^2.0.0:
 lockfile@~1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/lockfile/-/lockfile-1.0.3.tgz#2638fc39a0331e9cac1a04b71799931c9c50df79"
+
+locutus@^2.0.5:
+  version "2.0.9"
+  resolved "https://registry.npmjs.org/locutus/-/locutus-2.0.9.tgz#e265af1e85fd19173e74386373888560783a02fc"
 
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
@@ -5471,7 +5458,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
-"minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
+"minimatch@2 || 3", minimatch@3.0.x, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -8960,6 +8947,23 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
+tsj-consolidate@^0.15.0:
+  version "0.15.1"
+  resolved "https://registry.npmjs.org/tsj-consolidate/-/tsj-consolidate-0.15.1.tgz#0f07664c793077a6e8c99b2fdd18647bebf557e7"
+  dependencies:
+    bluebird "^3.1.1"
+
+tsj-koa-views@^6.1.4:
+  version "6.1.4"
+  resolved "https://registry.npmjs.org/tsj-koa-views/-/tsj-koa-views-6.1.4.tgz#4f9b983a9fac7c5c2d28f9567dee5fab9f1db3af"
+  dependencies:
+    debug "^3.1.0"
+    get-paths "^0.0.2"
+    koa-send "^4.0.0"
+    mz "^2.4.0"
+    pretty "^2.0.0"
+    tsj-consolidate "^0.15.0"
+
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -8981,6 +8985,14 @@ tunnel-agent@~0.4.1:
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+twig@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.npmjs.org/twig/-/twig-1.11.0.tgz#6c92f26162c4499297aa848b343eea739a26bd48"
+  dependencies:
+    locutus "^2.0.5"
+    minimatch "3.0.x"
+    walk "2.3.x"
 
 type-check@~0.3.2:
   version "0.3.2"
@@ -9291,6 +9303,12 @@ vm-browserify@0.0.4, vm-browserify@~0.0.1:
   resolved "https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+walk@2.3.x:
+  version "2.3.13"
+  resolved "https://registry.npmjs.org/walk/-/walk-2.3.13.tgz#400852ade80df679f54637e4f08654ed6628f6da"
+  dependencies:
+    foreachasync "^3.0.0"
 
 walkdir@^0.0.11:
   version "0.0.11"
