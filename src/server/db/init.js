@@ -1,4 +1,4 @@
-const parameters = require('config/parameters.js');
+const parameters = require('../config/parameters.js');
 const Sequelize = require('sequelize');
 let dbConfig = parameters.dbConfig;
 
