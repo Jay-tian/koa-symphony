@@ -22,14 +22,33 @@ db.query('SELECT * FROM `migrations`;',  { type: db.QueryTypes.SELECT}).then(mig
   migrations = tookit.arrayIndex(migrations, 'name');
   migrations = migratePaths.filter(v => !migrations.includes(v));
   let sql;
-  migrations.forEach(f => {
+
+  if (migrations.length == 0) {
+    process.exit(0);
+  }
+
+  let promises = [];
+  let insertValue;
+  let length = migrations.length;
+  migrations.forEach((f, index) => {
     sql = require(parameters.migrationPath + f + '.js');
-    db.query(sql);
-    console.info(f+'执行成功');
+    insertValue = `('${f}')`;
+    if (length - 1 != index) {
+      insertValue += ',';
+    }
+    promises.push(db.query(sql));
   });
 
+  promises.push(db.query(`INSERT INTO migrations(name) VALUES ${insertValue}`));
+
+  Promise.all(promises).then(function() {
+    process.exit(0);
+  }).catch(error => {
+    console.log(error);
+    process.exit(0);
+  });
 }).catch(error => {
-  console.warn(error);
+  console.log(error);
   process.exit(0);
 });
 

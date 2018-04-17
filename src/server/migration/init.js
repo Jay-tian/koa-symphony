@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS user(
   createdTime int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
   updatedTime INT UNSIGNED NOT NULL DEFAULT '0' COMMENT '最后更新时间',
   PRIMARY KEY (id),
-  UNIQUE KEY email,
-  UNIQUE KEY nickname,
-  KEY updatedTime
+  UNIQUE KEY (email),
+  UNIQUE KEY (nickname),
+  KEY updatedTime (updatedTime)
   ) ENGINE = InnoDB  DEFAULT CHARSET= utf8;
 `;
