@@ -1,6 +1,6 @@
 // 执行数据库脚本
 const process = require('process');
-const tookit = require('../../common/array-tookit.js');
+const tookit = require('../../common/tookit.js');
 const parameters = require('../config/parameters.js');
 const path = require('path');
 const glob = require('glob');
@@ -21,24 +21,25 @@ db.query('SELECT * FROM `migrations`;',  { type: db.QueryTypes.SELECT}).then(mig
 
   migrations = tookit.arrayIndex(migrations, 'name');
   migrations = migratePaths.filter(v => !migrations.includes(v));
-  let sql;
 
   if (migrations.length == 0) {
     process.exit(0);
   }
 
-  let promises = [];
-  let insertValue;
-  let length = migrations.length;
-  migrations.forEach((f, index) => {
-    sql = require(parameters.migrationPath + f + '.js');
-    insertValue = `('${f}')`;
-    if (length - 1 != index) {
-      insertValue += ',';
+  let promises = [], insertValue = [], Upgrade, upgrade;
+  migrations.forEach((f) => {
+    Upgrade = require(parameters.migrationPath + f + '.js');
+    if ('string' == typeof(Upgrade) ) {
+      promises.push(db.query(Upgrade));
+    } else {
+      upgrade = new Upgrade(db);
+      promises.push(upgrade.execute());
     }
-    promises.push(db.query(sql));
+
+    insertValue.push(`('${f}')`);
   });
 
+  insertValue = insertValue.join(',');
   promises.push(db.query(`INSERT INTO migrations(name) VALUES ${insertValue}`));
 
   Promise.all(promises).then(function() {

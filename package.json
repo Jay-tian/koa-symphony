@@ -24,6 +24,7 @@
     "build": "cross-env NODE_ENV=development settingPath='/webpack/setting.js' webpack -p --config './webpack/webpack.config.js'",
     "dev": "cross-env NODE_ENV=production settingPath='/webpack/setting.js' webpack-dev-server --color --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
-    "migrate": "node ./src/server/bin/sql-migrate.js"
+    "migrate": "node ./src/server/bin/sql-migrate.js",
+    "m-generate": "node ./src/server/bin/migrate-generate.js"
   }
 }
