@@ -7,11 +7,11 @@ const app = new Koa();
 const db = require('db/init.js');
 
 app.context.db = db;
+
 // const User = sequelize.define('user', {
 //   username: Sequelize.STRING,
 //   birthday: Sequelize.DATE
 // });
-
 // sequelize.sync()
 //   .then(() => User.create({
 //     username: 'janedoe',
