@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "codeages-design": "^0.1.6",
     "cross-env": "^5.1.3",
     "install": "^0.11.0",
@@ -22,8 +23,8 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=development settingPath='/webpack/setting.js' webpack -p --config './webpack/webpack.config.js'",
-    "dev": "cross-env NODE_ENV=production settingPath='/webpack/setting.js' webpack-dev-server --color --config './webpack/webpack.config.js'",
+    "build": "cross-env NODE_ENV=production settingPath='/webpack/setting.js' webpack -p --config './webpack/webpack.config.js'",
+    "dev": "cross-env NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --color --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
     "migrate": "node ./src/server/bin/sql-migrate.js",
     "m-generate": "node ./src/server/bin/migrate-generate.js"
