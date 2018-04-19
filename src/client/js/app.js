@@ -1,4 +1,4 @@
 require('../less/main.less');
-require('codeages-design/src/less/codeages-design.less');
-const cd = require('codeages-design');
+const cd = require('codeages-design/dist/codeages-design.js');
+import 'codeages-design/dist/codeages-design.css';
 window.cd = cd;
