@@ -16,7 +16,8 @@
   <link rel="icon" href="" type="image/x-icon"/>
   <link rel="shortcut icon" href="/" type="image/x-icon" media="screen"/>
 </head>
-<body >
+
+<body class="{{ bodyClass|default('') }}">
 {% block body %}
   <div>
     {% block header %}
@@ -26,6 +27,9 @@
     {% endblock %} 
 
     {% block bottom %}
+      <footer class="footer">
+        
+      </footer>
     {% endblock %}
   </div>
   <div id="login-modal" class="modal" data-url=""></div>
