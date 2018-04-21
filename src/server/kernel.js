@@ -38,7 +38,7 @@ app.use(
 
 //初始化静态资源路径
 app.use(koaStatic(
-  path.join(parameters.rootPath, 'static')
+  path.join(parameters.rootPath, 'public')
 ));
 
 module.exports = app;
