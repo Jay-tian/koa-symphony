@@ -15,6 +15,10 @@ router.get('/index', async function (ctx, next) {
   return ctx.render('index/index.twig', {});
 });
 
+router.get('/furrytail', async function (ctx, next) {
+  return ctx.render('furrytail/index.twig', {});
+});
+
 app.use(router.routes());
 app.listen(3000);
 
