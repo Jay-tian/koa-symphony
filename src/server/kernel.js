@@ -4,22 +4,16 @@ const path = require('path');
 const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
 const app = new Koa();
-const db = require('db/init.js');
 
-app.context.db = db;
+app.use(koaStatic(
+  path.join(parameters.rootPath, 'public')
+));
 
-// const User = sequelize.define('user', {
-//   username: Sequelize.STRING,
-//   birthday: Sequelize.DATE
-// });
-// sequelize.sync()
-//   .then(() => User.create({
-//     username: 'janedoe',
-//     birthday: new Date(1980, 6, 20)
-//   }))
-//   .then(jane => {
-//     console.log(jane.toJSON());
-//   });
+app.use(async (ctx, next) => {
+  ctx.state.version = '1.0.0';
+  ctx.state.rootPath = parameters.rootPath;
+  await next();
+});
 
 //初始化模版渲染路径
 app.use(
@@ -35,10 +29,5 @@ app.use(
     }
   )
 );
-
-//初始化静态资源路径
-app.use(koaStatic(
-  path.join(parameters.rootPath, 'public')
-));
 
 module.exports = app;
