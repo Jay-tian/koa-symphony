@@ -6,8 +6,10 @@ const views = require('tsj-koa-views');
 const app = new Koa();
 
 app.use(koaStatic(
-  path.join(parameters.rootPath, 'public')
-));
+  path.join(parameters.rootPath, 'public/static')
+), {
+  root: parameters.rootPath
+});
 
 app.use(async (ctx, next) => {
   ctx.state.version = '1.0.0';
