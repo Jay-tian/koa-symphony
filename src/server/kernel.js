@@ -6,7 +6,7 @@ const views = require('tsj-koa-views');
 const app = new Koa();
 
 app.use(koaStatic(
-  path.join(parameters.rootPath, 'public/static')
+  path.join(parameters.rootPath, '/public/')
 ), {
   root: parameters.rootPath
 });
