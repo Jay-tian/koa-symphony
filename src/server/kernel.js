@@ -7,9 +7,7 @@ const app = new Koa();
 
 app.use(koaStatic(
   path.join(parameters.rootPath, '/public/')
-), {
-  root: parameters.rootPath
-});
+));
 
 app.use(async (ctx, next) => {
   ctx.state.version = '1.0.0';
