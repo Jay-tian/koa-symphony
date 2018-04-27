@@ -1,23 +1,18 @@
-
-const db = require('../db/init.js');
-module.exports = class BaseDao{
+module.exports = class BaseService{
   constructor() {
-    this.db = db;
   }
 
   count() {
-
   }
 
   search() {
-    return ;
+    return;
   }
 
   get() {
-
+    return '123';
   }
 
   findByIds() {
-
   }
 };
