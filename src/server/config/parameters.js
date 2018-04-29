@@ -9,4 +9,5 @@ module.exports = {
   viewPath: path.join(rootPath, './src/server/view/'),
   dbConfig: dbConfig,
   migrationPath: path.join(rootPath + '/src/server/migration/'),
+  version: '1.0.0',
 };

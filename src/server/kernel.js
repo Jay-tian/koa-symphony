@@ -3,6 +3,7 @@ const koaStatic = require('koa-static');
 const path = require('path');
 const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
+const ServiceManage = require('./service/ServiceManage.js');
 const app = new Koa();
 
 app.use(koaStatic(
@@ -10,8 +11,14 @@ app.use(koaStatic(
 ));
 
 app.use(async (ctx, next) => {
-  ctx.state.version = '1.0.0';
+  ctx.state.version = parameters.version;
   ctx.state.rootPath = parameters.rootPath;
+  await next();
+});
+
+app.use(async (ctx, next) => {
+  const serviceManage = new ServiceManage();
+  ctx.state.serviceManage = serviceManage;
   await next();
 });
 
@@ -29,5 +36,11 @@ app.use(
     }
   )
 );
+
+app.use(async (ctx, next) => {
+  let userService = ctx.state.serviceManage.create('user/UserService');
+  console.log(userService.get('123123'));
+  await next();
+});
 
 module.exports = app;

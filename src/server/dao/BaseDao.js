@@ -3,23 +3,19 @@ const db = require('../db/init.js');
 module.exports = class BaseDao{
   constructor(table) {
     this.db = db;
-    this.table = table;
-    this.dao = this.db.define(this.table, {});
+    this.dao = this.db.define(table, {});
   }
 
   count() {
-
   }
 
   search() {
-    return ;
+    return;
   }
 
   get() {
-
   }
 
   findByIds() {
-
   }
 };
