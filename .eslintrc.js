@@ -6,6 +6,7 @@ module.exports = {
         "jquery": true,
     },
     "globals": {
+      "fullpage": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

@@ -8,6 +8,7 @@
     "codeages-design": "^0.1.6",
     "cross-env": "^5.1.4",
     "install": "^0.11.0",
+    "jay-fullpage.js": "^2.9.7",
     "jay-webpack-scaffold": "^1.0.8",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
