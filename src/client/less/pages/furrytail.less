@@ -68,6 +68,28 @@ body{
   }
   .section{
     height: 100vh;
+    .title,
+    .description,
+    .sub-description,
+    .show{
+      opacity: 0;
+      transition: all 1s ease;
+      transition-delay: .2s;
+    }
+    .description{
+      transition-delay: .8s;
+    }
+    .sub-description{
+      transition-delay: 1.6s;
+    }
+    &.transition-active{
+      .title,
+      .description,
+      .sub-description{
+        opacity: 1;
+        margin-left: 0;
+      }
+    }
     .swiper-btns{
       margin-top: 1.5rem;
       position: relative;
@@ -93,6 +115,7 @@ body{
       line-height: 48px;
       font-weight: 600;
       margin-bottom: 20px;
+      margin-left: -60px;
     }
     .description{
       font-family: SourceHanSansCN-Medium;
@@ -101,6 +124,7 @@ body{
       letter-spacing: 0.57px;
       line-height: 24px;
       margin-bottom: 20px;
+      margin-left: -60px;
     }
     .sub-description{
       font-family: SourceHanSansCN-Regular;
@@ -109,6 +133,7 @@ body{
       letter-spacing: 0.46px;
       line-height: 20.8px;
       width: 35vh;
+      margin-left: -60px;
     }
     .show{
       margin-top: 40px;
@@ -151,7 +176,6 @@ body{
       padding-top: 10vh;
     }
     .title{
-      opacity: 0.4;
       font-family: EuclidFlex;
       font-size: 60px;
       color: #FFFFFF;

@@ -1,5 +1,5 @@
 /*! tianshengjie */
-webpackJsonp([1],{333:function(e,t,n){"use strict";(function(e){n(334),n(335);var t=e("#fullpage");t.fullpage({scrollingSpeed:1e3,anchors:["furlosophy","byebyefur","fooddict"," scratcher","pills","addiction","aboot","contact"]}),e(".first-netxt").click(function(){t.fullpage.moveSectionDown()})}).call(t,n(63))},334:function(e,t){},335:function(e,t,n){var o,r;/*!
+webpackJsonp([1],{333:function(e,t,n){"use strict";(function(e){n(334),n(335);var t=e("#fullpage"),o=t.find(".section");t.fullpage({scrollingSpeed:1e3,anchors:["furlosophy","byebyefur","fooddict"," scratcher","pills","addiction","aboot","contact"],afterLoad:function(e,t){setTimeout(function(){o.eq(t-1).addClass("transition-active")},50)}}),e(".first-netxt").click(function(){t.fullpage.moveSectionDown()})}).call(t,n(63))},334:function(e,t){},335:function(e,t,n){var o,r;/*!
  * fullPage 2.9.7
  * https://github.com/alvarotrigo/fullPage.js
  * @license MIT licensed
