@@ -6,7 +6,8 @@ module.exports = {
         "jquery": true,
     },
     "globals": {
-      "fullpage": true
+      "fullpage": true,
+      "Swiper": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

@@ -82,16 +82,23 @@ body{
     .sub-description{
       transition-delay: 1.6s;
     }
+    .show{
+      transition-delay: 2s;
+    }
     &.transition-active{
       .title,
       .description,
-      .sub-description{
+      .sub-description,
+      .show{
         opacity: 1;
         margin-left: 0;
       }
+      .show{
+        margin-top: 40px;
+      }
     }
     .swiper-btns{
-      margin-top: 1.5rem;
+      margin-top: 5vh;
       position: relative;
       left: -12px;
       margin-left: -5rem;
@@ -107,6 +114,17 @@ body{
         line-height: 5rem;
       }
     }
+    .swiper{
+      margin-top: -5vh;
+      margin-right: -12px;
+      right: 0;
+      height: 60vh;
+      text-align: right;
+      img{
+        height: 100%;
+        float: right;
+      }
+    }
     .title{
       font-family: EuclidFlexBold;
       font-size: 48px;
@@ -114,7 +132,7 @@ body{
       letter-spacing: 1.33px;
       line-height: 48px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 3vh;
       margin-left: -60px;
     }
     .description{
@@ -123,7 +141,7 @@ body{
       color: #666;
       letter-spacing: 0.57px;
       line-height: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 3vh;
       margin-left: -60px;
     }
     .sub-description{
@@ -136,7 +154,7 @@ body{
       margin-left: -60px;
     }
     .show{
-      margin-top: 40px;
+      margin-top: 60px;
       a{
         font-family: SourceHanSansCN-Regular;
         color: #626262;
@@ -149,10 +167,13 @@ body{
   }
 
   .main-top-distant{
-    margin-top: 15vh;
+    margin-top: 10vh;
   }
 
   .furlosophy{
+    .swiper{
+      margin-top: 0;
+    }
     .first-netxt{
       color:#999;
       font-size: 3rem;
@@ -183,6 +204,9 @@ body{
       line-height: 50px;
       margin-bottom: 25px;
     }
+    &.section.transition-active .title{     
+      opacity: .4;   
+    }
     .description{
       font-family: EuclidFlexBold;
       font-size: 40px;
@@ -197,18 +221,18 @@ body{
       color: #F3F3F3;
       letter-spacing: 0.57px;
     }
-    .swiper{
-      position: relative;
-      img{
-        margin-right: -12px;
-      }
-    }
   }
 
   .contact{
     .title,
     .description{
       color: #fff!important;
+    }
+    .swiper{
+      img{
+        float: left;
+        margin-left: -50%;
+      }
     }
   }
 
