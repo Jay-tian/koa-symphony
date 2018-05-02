@@ -1,6 +1,9 @@
 require('../../less/pages/furrytail.less');
+//require('swiper/dist/css/swiper.min.css');
 require('jay-fullpage.js');
+// const Swiper = require('swiper').default;
 let $fullpage = $('#fullpage');
+
 let $sections = $fullpage.find('.section');
 
 $fullpage.fullpage({
@@ -17,3 +20,14 @@ $fullpage.fullpage({
 $('.first-netxt').click(function(){
   $fullpage.fullpage.moveSectionDown();
 });
+
+
+// new Swiper('#test', {
+//   slidesPerView: 'auto',
+//   spaceBetween: 30,
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+// });
+  
