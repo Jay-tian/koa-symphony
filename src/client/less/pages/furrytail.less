@@ -127,10 +127,10 @@ body{
     }
     .title{
       font-family: EuclidFlexBold;
-      font-size: 48px;
+      font-size: 7rem;
       color: #626262;
       letter-spacing: 1.33px;
-      line-height: 48px;
+      line-height: 7rem;
       font-weight: 600;
       margin-bottom: 3vh;
       margin-left: -60px;
@@ -198,22 +198,23 @@ body{
     }
     .title{
       font-family: EuclidFlex;
-      font-size: 60px;
+      font-size: 4rem;
       color: #FFFFFF;
       letter-spacing: 1.67px;
-      line-height: 50px;
-      margin-bottom: 25px;
+      line-height: 3.5rem;
+      margin-bottom: 1.7rem;
     }
     &.section.transition-active .title{     
       opacity: .4;   
     }
     .description{
       font-family: EuclidFlexBold;
-      font-size: 40px;
+      font-size: 2.8rem;
       color: #F3F3F3;
       letter-spacing: 1.11px;
-      line-height: 55.44px;
+      line-height: 3.8rem;
       margin-bottom: 25px;
+      height: 7.6rem;
     }
     .sub-description{
       font-family: SourceHanSansCN-Regular;
@@ -251,5 +252,55 @@ body{
   }
   .bg-white{
     background: @color-white;
+  }
+}
+
+
+@media (min-width: 1450px) {
+  .furrytail .main-top-distant{
+    margin-top: 15vh;
+  }
+}
+
+
+@media (max-width: 480px) {
+  html{
+    font-size: 10px;
+  }
+  .furrytail{
+    .section{
+      .title{
+        font-size: 16px;
+        line-height: 16px;
+        height: 20px;
+      }
+    }
+    .full-screen{
+        height: 50%;
+    }
+    .main-top-distant{
+      margin-top: 15vh;
+    }
+    h1{
+      position: static;
+      float: none;
+      text-align: center;
+    }
+    .header{
+      padding: 10px 5px;
+      ul{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: left;
+        li{
+          padding: 0 3px;
+        }
+      }
+    }
+    .main-top-distant{
+      margin-top: 6vh!important;
+      padding-top: 0!important;
+    }
   }
 }
