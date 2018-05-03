@@ -74,34 +74,33 @@ body{
     .sub-description,
     .show{
       opacity: 0;
-      transition: all 1s ease;
-    }
-    .description{
-      transition-delay: .8s;
-    }
-    .sub-description{
-      transition-delay: 1.6s;
-    }
-    .show{
-      transition-delay: 2s;
+      transition: all .5s ease;
     }
     &.transition-active{
       .title,
       .description,
       .sub-description,
       .show{
+        transition: all 1s ease;
         opacity: 1;
         margin-left: 0;
       }
       .show{
         margin-top: 40px;
+        transition-delay: 2.2s;
+      }
+      .description{
+        transition-delay: .8s;
+      }
+      .sub-description{
+        transition-delay: 1.6s;
+        margin-top: 0;
       }
     }
     .swiper-btns{
-      margin-top: 5vh;
-      position: relative;
-      left: -12px;
-      margin-left: -5rem;
+      bottom: 8%;
+      position: absolute;
+      left: -70px;
       >i{
         background: #F3EAE3;
         display: block;
@@ -117,12 +116,14 @@ body{
     .swiper{
       margin-top: -5vh;
       margin-right: -12px;
+      position: absolute;
+      left: -30%;
       right: 0;
-      height: 60vh;
-      text-align: right;
+      height: 65vh;
+      text-align: left;
+      overflow: hidden;
       img{
         height: 100%;
-        float: right;
       }
     }
     .title{
@@ -151,7 +152,7 @@ body{
       letter-spacing: 0.46px;
       line-height: 20.8px;
       width: 35vh;
-      margin-left: -60px;
+      margin-top: 40px;
     }
     .show{
       margin-top: 60px;
@@ -167,7 +168,7 @@ body{
   }
 
   .main-top-distant{
-    margin-top: 10vh;
+    margin-top: 15vh;
   }
 
   .furlosophy{
@@ -228,6 +229,9 @@ body{
     .title,
     .description{
       color: #fff!important;
+    }
+    .title{
+      margin-bottom: 6vh;
     }
     .swiper{
       img{
