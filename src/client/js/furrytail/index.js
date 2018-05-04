@@ -25,19 +25,36 @@ $('.js-nav a').click(function(){
 
 $('.swiper-btns').on('click', 'i', function() {
   let $swiper = $(this).parent().prev();
-  let position = $(this).hasClass('cd-icon-arrow-left') ? '+' : '-';
+  let number = $swiper.find('.swiper-slide').length;
   let $swiperActive = $swiper.find('.swiper-slide.active');
-  let index = $swiperActive.index();
-
-  if(position == '+' && index == 0) {
-    return;
-  }
-  if(position == '-' && index == 2) {
-    return;
-  }
+  let $nextSlide = $(this).hasClass('cd-icon-arrow-left') ?  $swiperActive.prev() : $swiperActive.next();
   
-  let width = $swiperActive.width() - ($swiper.width() - $swiperActive.width() - 40) ;
-  $swiper.find('.swiper-wrapper').animate({marginLeft: `${position}=${width}`}, 600, 'swing');
+  if ($nextSlide.length == 0) {
+    $nextSlide = $(this).hasClass('cd-icon-arrow-left') ? $swiper.find('.swiper-slide').eq(number-1): $swiper.find('.swiper-slide').eq(0);
+  }
+  let left = 0;
+  switch ($nextSlide.index() + 1) {
+  case 1:
+    break;
+  case number:
+    left = $nextSlide.position().left - ($swiper.width() - $nextSlide.width() + 40);
+    break;
+  default:
+    left = $nextSlide.position().left - ($swiper.width() - $nextSlide.width() + 40) / 2;
+    break;
+  }
+
+  $swiper.find('.swiper-wrapper').animate({marginLeft: `-${left}`}, 600, 'swing');
   $swiperActive.removeClass('active');
-  $(this).hasClass('cd-icon-arrow-left') ? $swiperActive.prev().addClass('active') : $swiperActive.next().addClass('active');
+  $nextSlide.addClass('active');
+
+  let $section = $(this).closest('.section');
+  $section.removeClass('transition-active');
+   
+  setTimeout(function() {
+    $section.find('.title').html($nextSlide.data('title'));
+    $section.find('.description').html($nextSlide.data('description'));
+    $section.find('.sub-description').html($nextSlide.data('subDescription'));
+    $section.addClass('transition-active');
+  }, 800);
 });
