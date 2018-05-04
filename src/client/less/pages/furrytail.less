@@ -69,6 +69,9 @@ body{
   .section{
     height: 100vh;
     overflow: hidden;
+    .swiper-padding-right{
+      padding-right: 0;
+    }
     .title,
     .description,
     .sub-description,
@@ -98,9 +101,8 @@ body{
       }
     }
     .swiper-btns{
-      bottom: 8%;
-      position: absolute;
-      left: -70px;
+      margin-top: 5rem;
+      margin-left: -82px;
       >i{
         background: #F3EAE3;
         display: block;
@@ -111,19 +113,36 @@ body{
         height: 5rem;
         text-align: center;
         line-height: 5rem;
+        cursor: pointer;
       }
     }
     .swiper{
-      margin-top: -5vh;
-      margin-right: -12px;
-      position: absolute;
-      left: -30%;
-      right: 0;
-      height: 65vh;
-      text-align: left;
+      position: relative;
+      margin-top: 0;
+      left: -20%;
+      right: -12px;
+      width: 120%;
+      height: 42%;
       overflow: hidden;
+      .swiper-wrapper{
+        width: 10000px;
+        height: 100%;
+      }
+      .swiper-slide{
+        float: left;
+        height: 100%;
+        &.active{
+          img{
+              opacity: 1;
+          }
+        }
+      }
       img{
         height: 100%;
+        width: auto;
+        margin-right: 40px;
+        opacity: .6;
+        transition: all .3s ease;
       }
     }
     .title{
@@ -169,6 +188,7 @@ body{
 
   .main-top-distant{
     margin-top: 15vh;
+    height: 100%;
   }
 
   .furlosophy{
@@ -233,11 +253,10 @@ body{
     .title{
       margin-bottom: 6vh;
     }
-    .swiper{
-      img{
-        float: left;
-        margin-left: -50%;
-      }
+    img{
+      float: left;
+      margin-top: -5rem;
+      margin-left: -50%;
     }
   }
 
@@ -260,7 +279,7 @@ body{
 }
 
 
-@media (min-width: 1450px) {
+@media (max-width: 1450px) {
   .furrytail .main-top-distant{
     margin-top: 15vh;
   }

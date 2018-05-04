@@ -1,9 +1,6 @@
 require('../../less/pages/furrytail.less');
-require('swiper/dist/css/swiper.min.css');
 require('jay-fullpage.js');
-const Swiper = require('swiper/dist/js/swiper.js');
 let $fullpage = $('#fullpage');
-
 let $sections = $fullpage.find('.section');
 
 $fullpage.fullpage({
@@ -25,8 +22,22 @@ $('.js-nav a').click(function(){
   $(this).addClass('active').siblings().removeClass('active');
 });
 
-new Swiper('#test', {
-  loop : true,
-  slidesPerView: 'auto',
-});
+
+$('.swiper-btns').on('click', 'i', function() {
+  let $swiper = $(this).parent().prev();
+  let position = $(this).hasClass('cd-icon-arrow-left') ? '+' : '-';
+  let $swiperActive = $swiper.find('.swiper-slide.active');
+  let index = $swiperActive.index();
+
+  if(position == '+' && index == 0) {
+    return;
+  }
+  if(position == '-' && index == 2) {
+    return;
+  }
   
+  let width = $swiperActive.width() - ($swiper.width() - $swiperActive.width() - 40) ;
+  $swiper.find('.swiper-wrapper').animate({marginLeft: `${position}=${width}`}, 600, 'swing');
+  $swiperActive.removeClass('active');
+  $(this).hasClass('cd-icon-arrow-left') ? $swiperActive.prev().addClass('active') : $swiperActive.next().addClass('active');
+});
