@@ -10,7 +10,6 @@ module.exports = class BaseService{
   }
 
   get() {
-    return '123';
   }
 
   findByIds() {

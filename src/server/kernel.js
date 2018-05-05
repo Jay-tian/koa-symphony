@@ -39,7 +39,6 @@ app.use(
 
 app.use(async (ctx, next) => {
   let userService = ctx.state.serviceManage.create('user/UserService');
-  console.log(userService.get('123123'));
   await next();
 });
 

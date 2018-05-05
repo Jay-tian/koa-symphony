@@ -28,7 +28,9 @@ $('.swiper-btns').on('click', 'i', function() {
   let number = $swiper.find('.swiper-slide').length;
   let $swiperActive = $swiper.find('.swiper-slide.active');
   let $nextSlide = $(this).hasClass('cd-icon-arrow-left') ?  $swiperActive.prev() : $swiperActive.next();
-  
+  if($nextSlide.length == 0) {
+    return;
+  }
   if ($nextSlide.length == 0) {
     $nextSlide = $(this).hasClass('cd-icon-arrow-left') ? $swiper.find('.swiper-slide').eq(number-1): $swiper.find('.swiper-slide').eq(0);
   }

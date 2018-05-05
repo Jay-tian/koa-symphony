@@ -21,3 +21,7 @@ exports.timestamp = function(){
 
   return `${y}${m}${d}${h}${mm}${s}`;  
 };
+
+exports.isMobileClient = function(agent){
+  return agent.match(/(iPhone|iPod|Android|ios)/i);
+};

@@ -1,0 +1,107 @@
+{% extends 'layout.twig' %}
+
+{% set title = "furrytail" %}
+{% set description = "Furlosophy is the new philosophy." %}
+{% set keywords = "furrytail 白白猫窝" %}
+
+{% set styles = ['/build/furrytail/mobile/index.css'] %}
+{% set scripts = ['/build/furrytail/mobile/index.js'] %}
+{% set bodyClass = 'furrytail' %}
+
+{% block header %}
+  <header class="header cd-clearfix">
+    <h1>
+      <img src="{{ '/image/logo.png' }}">
+      <a href="/" hidefocus="true">
+         FURRYTAIL
+      </a>
+    </h1>
+    <div class="">
+      <i class=""></i>
+    </div>
+  </header>
+{% endblock %}
+
+{% block main %}
+<div id="fullpage">
+  <div class="section">
+    <img src="image/furrytail/mobile/banner.jpg"> 
+  </div>
+  <div class="section">
+    <div class="title text-right">
+      BYEBYEFUR
+    </div>
+    <div class="description text-right">
+      Born to be the only one bed <br/>
+      that make you and your cat love at first sight
+    </div> 
+    <img src="image/furrytail/mobile/1.jpg"> 
+  </div>
+  <div class="section">
+    <div class="title text-left">
+      FOODDICT
+    </div>
+    <div class="description text-left">
+      <p class="color-dark">Fooddict Cat Bowl</p>
+      Hand blown glass，let cats be food addict.
+    </div> 
+    <img src="image/furrytail/mobile/fooddict.jpg"> 
+  </div>
+  <div class="section scratcher">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="title text-left">
+      X SCRATCHER
+    </div>
+    <div class="description text-left">
+      Cat is UNKNOW<br/>
+      while UNKNOW means everything
+    </div> 
+    <img src="image/furrytail/mobile/x+scratcher.png"> 
+  </div>
+  <div class="section">
+    <div class="title text-left">
+      Addiction<br/>
+      Cat Mint
+    </div>
+    <div class="description text-left">
+      Mini package of the Cat Pills cat mint
+    </div> 
+    <img src="image/furrytail/mobile/cat-mini.jpg"> 
+  </div>
+  <div class="section">
+    <div class="title text-right">
+      CATPILLS
+    </div>
+    <div class="description text-right">
+      Cat conquers the universe,<br/>
+      while cat pills conquer cat.
+    </div> 
+    <img src="image/furrytail/mobile/addict.jpg"> 
+  </div>
+  <div class="section contact">
+    <div class="title text-left">
+      About Us
+    </div>
+    <div class="description text-left">
+      Furlosophy is the new philosophy.
+    </div> 
+    <p>
+      FURRYTAIL provide not only physical products for pets, but also entertaining contents for the pets' owners. Through different shooting projects and storytelling system, FURRYTAIL are building strong connection with the young generation.<br/>
+      The latest shooting project called < Cats' Kingdom >, is building a wonderland all focus on cats. Cute little cats and imaginative setting with creative products placement, this project is making a big success among young pets owners. And this is just a beginning.
+    </p>
+    <img src="image/furrytail/mobile/group.jpg">
+    <div class="title text-left">
+      Contact Us    
+    </div>
+    <p>
+      Mobile: +86（0571）8288 0846<br/>
+      Tel: +86 157 5713 5614<br/>
+      Email: freyalian@furrytail-pet.com    
+    </p>
+  </div>
+</div>
+{% endblock %} 
+
+{% block bottom %}
+{% endblock %} 
