@@ -90,13 +90,10 @@ body{
       }
       .show{
         margin-top: 40px;
-        transition-delay: 2.2s;
-      }
-      .description{
-        transition-delay: .8s;
+        transition-delay: 1.2s;
       }
       .sub-description{
-        transition-delay: 1.6s;
+        transition-delay: .8s;
         margin-top: 0;
       }
     }
@@ -193,8 +190,8 @@ body{
   }
 
   .furlosophy{
-    .swiper{
-      margin-top: 0;
+    img{
+      height: 60%;
     }
     .first-netxt{
       color:#999;
@@ -256,7 +253,8 @@ body{
     }
     img{
       float: left;
-      margin-top: -5rem;
+      height: 60%;
+      margin-top: 0;
       margin-left: -50%;
     }
   }
@@ -279,5 +277,66 @@ body{
   }
   .bg-white{
     background: @color-white;
+  }
+}
+
+@media (min-width: 768px) {
+  .furrytail {
+    .contact img{
+      margin-left: 0;
+      height: 100%;
+      float: right;
+    }
+    .header{
+      padding-left: 20px;
+      ul{
+        margin-left: 200px;
+      }
+      li{
+        padding: 0 10px;
+      }
+    }
+    .section {
+      .swiper-padding-right{
+        padding: 20px 0;
+      }
+      .swiper{
+        height: 60%;
+        width: 100%;
+        left: 0;
+      }
+      .swiper-btns{
+        margin-top: 20px;
+        text-align: center;
+        i{
+          float: none;
+          padding: 15px 20px;
+          display: inline;
+        }
+      }
+    }
+    .full-screen{
+      height: 50vh;
+      padding-left:50px;
+    }
+    .words{
+      padding-top: 30px!important;
+      margin-top: 0!important;
+    }
+    .first-netxt{
+      display: none;
+    }
+    .main-top-distant{
+      margin-top: 30px;
+    }
+    .furlosophy{
+      .swiper-bg{
+        text-align: center;
+      }
+      img{
+        float: none;
+        height: 80%;
+      }
+    }
   }
 }
