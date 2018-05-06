@@ -19,7 +19,8 @@ $('.first-netxt').click(function(){
 });
 
 $('.js-nav a').click(function(){
-  $(this).addClass('active').siblings().removeClass('active');
+  $('.js-nav a').removeClass('active');
+  $(this).addClass('active');
 });
 
 
