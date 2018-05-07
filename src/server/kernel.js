@@ -1,5 +1,5 @@
 const Koa = require('koa'); 
-const staticCache = require('koa-static-cache')
+const staticCache = require('koa-static-cache');
 const path = require('path');
 const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
