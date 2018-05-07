@@ -1,3 +1,5 @@
-Twig.extendFilter("backwords", function(value) {
-    return value.split(" ").reverse().join(" ");
-});
+module.exports = {
+  test: function(path) {
+    return path+'?v=1.0.0';
+  }
+};
