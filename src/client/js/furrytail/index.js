@@ -1,4 +1,3 @@
-require('../../less/pages/furrytail.less');
 require('jay-fullpage.js');
 let $fullpage = $('#fullpage');
 let $sections = $fullpage.find('.section');

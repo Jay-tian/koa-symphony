@@ -12,7 +12,7 @@
   </title>
   <meta name="keywords" content="{{ keywords|default('furrytail 白白猫窝') }}"/>
   <meta name="description" content="{{ description|default('Furlosophy is the new philosophy.') }}">
-  <link href="/build/app.css" rel="stylesheet">
+  <link href="/dist/css/app.css" rel="stylesheet">
   {% for style in styles|default('') %}
     <link href="{{ asset(style) }}" rel="stylesheet">
   {% endfor %}
@@ -52,8 +52,8 @@
   <div id="login-modal" class="modal" data-url=""></div>
   <div id="modal" class="modal"></div>
 {% endblock %}
-  <script src="/build/common.js"></script>
-  <script src="{{ '/build/app.js' }}"></script>
+  <script src="/dist/js/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/dist/js/app.js"></script>
   {% for script in scripts|default('') %}
     <script src="{{ asset(script) }}"> </script>
   {% endfor %}
