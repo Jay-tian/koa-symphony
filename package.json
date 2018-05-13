@@ -9,7 +9,7 @@
     "cross-env": "^5.1.4",
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
-    "jay-webpack-scaffold": "^1.1.1",
+    "jay-webpack-scaffold": "^1.1.2",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
@@ -18,10 +18,12 @@
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.3",
     "npm": "^5.8.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
     "sequelize": "^4.37.6",
     "swiper": "^4.2.5",
     "tsj-koa-views": "^6.1.4",
-    "twig": "^1.11.0"
+    "twig": "^1.11.0",
+    "uglifyjs-webpack-plugin": "^1.2.5"
   },
   "devDependencies": {
     "eslint": "^4.18.2",

@@ -1,1 +1,1 @@
-import 'codeages-design/src/less/codeages-design.less';
+console.log(1);

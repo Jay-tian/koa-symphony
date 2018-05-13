@@ -4,7 +4,7 @@ const path = require('path');
 const rootPath = process.cwd();
 
 let purifyCssPaths = glob.sync(path.join(rootPath, '/src/server/view/**/*.twig'));
-purifyCssPaths = Object.assign(purifyCssPaths, glob.sync(path.join(rootPath, '/src/client/js/**/*.js')));
+purifyCssPaths = purifyCssPaths.concat(glob.sync(path.join(rootPath, '/src/client/js/**/*.js')));
 
 let setting = {
   entry: rootPath + '/src/client/js/',
@@ -14,6 +14,11 @@ let setting = {
   publicPath: '/dist/',
   author: 'tianshengjie',
   purifyCssPaths: purifyCssPaths,
+  copyLibs: [
+    'validator', 
+    'swiper/dist',
+    'jquery/dist'
+  ],
 };
 
 module.exports = setting;

@@ -2763,7 +2763,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-cssnano@^3.10.0:
+cssnano@^3.10.0, cssnano@^3.4.0:
   version "3.10.0"
   resolved "https://registry.npmjs.org/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
   dependencies:
@@ -5246,9 +5246,13 @@ jay-fullpage.js@^2.9.7:
   dependencies:
     jquery ">=1.6.0"
 
-jay-webpack-scaffold@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.1.tgz#3d58096b78b32064b7a4e239dde4aab777da2ffe"
+jay-remove-webpack-plugin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/jay-remove-webpack-plugin/-/jay-remove-webpack-plugin-1.0.0.tgz#79495edc7bdde5e4a581c6ae8a3567fa14a828c7"
+
+jay-webpack-scaffold@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.2.tgz#275a3c7b2e714068748d1b8ae6b3ad7e10ebfac3"
   dependencies:
     antd "^2.13.1"
     autoprefixer "^7.2.5"
@@ -5274,6 +5278,7 @@ jay-webpack-scaffold@^1.1.1:
     extract-text-webpack-plugin next
     file-loader "^1.1.6"
     glob "^7.1.2"
+    jay-remove-webpack-plugin "^1.0.0"
     jquery "^3.3.1"
     jquery-validation "^1.17.0"
     less "^2.7.2"
@@ -5281,6 +5286,7 @@ jay-webpack-scaffold@^1.1.1:
     mime "^2.2.0"
     mini-css-extract-plugin "^0.4.0"
     open "^0.0.5"
+    optimize-css-assets-webpack-plugin "^4.0.1"
     particles.js "^2.0.0"
     popper "^1.0.1"
     popper.js "^1.12.9"
@@ -5645,6 +5651,13 @@ labeled-stream-splicer@^2.0.0:
     inherits "^2.0.1"
     isarray "~0.0.1"
     stream-splicer "^2.0.0"
+
+last-call-webpack-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
+  dependencies:
+    lodash "^4.17.5"
+    webpack-sources "^1.1.0"
 
 latest-version@^3.0.0:
   version "3.1.0"
@@ -7054,6 +7067,13 @@ opn@^5.1.0:
   resolved "https://registry.npmjs.org/opn/-/opn-5.2.0.tgz#71fdf934d6827d676cecbea1531f95d354641225"
   dependencies:
     is-wsl "^1.1.0"
+
+optimize-css-assets-webpack-plugin@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-4.0.1.tgz#48f016766752c7648b92cc1e795b999732bd87a2"
+  dependencies:
+    cssnano "^3.4.0"
+    last-call-webpack-plugin "^3.0.0"
 
 optionator@^0.8.2:
   version "0.8.2"
@@ -10284,7 +10304,7 @@ uglify-js@^3.0.6:
     commander "~2.15.0"
     source-map "~0.6.1"
 
-uglifyjs-webpack-plugin@^1.2.4:
+uglifyjs-webpack-plugin@^1.2.4, uglifyjs-webpack-plugin@^1.2.5:
   version "1.2.5"
   resolved "https://registry.npmjs.org/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.5.tgz#2ef8387c8f1a903ec5e44fa36f9f3cbdcea67641"
   dependencies:

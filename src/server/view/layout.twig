@@ -53,7 +53,7 @@
   <div id="modal" class="modal"></div>
 {% endblock %}
   <script src="/dist/js/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/dist/js/app.js"></script>
+  <script src="{{ asset('/dist/js/app.js') }}"></script>
   {% for script in scripts|default('') %}
     <script src="{{ asset(script) }}"> </script>
   {% endfor %}
