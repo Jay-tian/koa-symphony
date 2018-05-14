@@ -1,1 +1,4 @@
-console.log(1);
+const version = require('../../server/config/parameters.js').version;
+window.app = {
+  version: version
+};
