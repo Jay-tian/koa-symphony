@@ -22,6 +22,5 @@ let extensions = glob.sync(path.join(parameters.serverPath, 'twig-extension/**/*
     for (let name in functions) {
       Twig[extendName](name, functions[name]);
     }
-
   }
 })(extensions);

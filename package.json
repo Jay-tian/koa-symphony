@@ -9,7 +9,7 @@
     "cross-env": "^5.1.4",
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
-    "jay-webpack-scaffold": "^1.1.2",
+    "jay-webpack-scaffold": "^1.1.3",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
@@ -34,7 +34,8 @@
   },
   "scripts": {
     "build": "cross-env settingPath='/webpack/setting.js' webpack --mode production -p --config './webpack/webpack.config.js'",
-    "dev": "NODE_ENV=development nodemon app.js & cross-env settingPath='/webpack/setting.js' webpack --watch --mode development --config './webpack/webpack.config.js'",
+    "dev": "NODE_ENV=development nodemon app.js & cross-env settingPath='/webpack/setting.js' webpack-dev-server --mode development --config './webpack/webpack.config.js'",
+    "webpack-dev": "cross-env settingPath='/webpack/setting.js' webpack-dev-server --mode development --content-base 'public/' --config './webpack/webpack.config.js'",    
     "fix": "./node_modules/.bin/eslint --fix",
     "migrate": "node ./src/server/bin/sql-migrate.js",
     "m-generate": "node ./src/server/bin/migrate-generate.js"
