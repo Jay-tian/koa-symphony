@@ -1,5 +1,6 @@
-const Koa = require('koa'); 
-const staticCache = require('koa-static-cache')
+const Koa = require('koa');
+require('twig-extension/manage.js');
+const staticCache = require('koa-static-cache');
 const path = require('path');
 const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
