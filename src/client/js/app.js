@@ -1,4 +1,4 @@
-const version = require('../../server/config/parameters.js').version;
+const version = require('../../server/config/version.js');
 window.app = {
   version: version
 };
