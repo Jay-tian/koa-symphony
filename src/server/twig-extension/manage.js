@@ -1,13 +1,26 @@
+const glob = require('glob');
 const Twig = require('twig');
-const list = require('./extensionList.js');
+const path = require('path');
+const parameters = require('config/parameters.js');
+let extensionFunctions = {
+  function: 'extendFunction',
+  filter: 'extendFilter',
+};
 
-(function(list){
-  for (var key in list) {
-    list[key].forEach(function(path) {
-      let functions = require('./'+path);
-      for (let name in functions) {
-        Twig[key](name, functions[name]);
-      }
-    }, this);
+let extensions = glob.sync(path.join(parameters.serverPath, 'twig-extension/**/*.js'));
+
+(function(extensions){
+  for (var key in extensions) {
+    let fileName = path.basename(extensions[key], '.js');
+    let name = fileName.split('-').pop();
+    let extendName = extensionFunctions[name];
+    if (!extendName) {
+      return;
+    }
+
+    let functions = require(extensions[key]);
+    for (let name in functions) {
+      Twig[extendName](name, functions[name]);
+    }
   }
-})(list);
+})(extensions);
