@@ -11,7 +11,7 @@ let setting = {
   output: rootPath + '/public/dist/',
   mainJs: rootPath + '/src/client/js/app.js',
   lessPath: rootPath + '/src/client/less/pages',
-  publicPath: '/public/',
+  publicPath: '/dist/',
   author: 'tianshengjie',
   purifyCssPaths: purifyCssPaths,
   copyLibs: [
