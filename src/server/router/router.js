@@ -1,12 +1,14 @@
-
 module.exports = {
-  profix: '/',
+  options: {
+    profix: '/',
+  },
   login: {
     path: 'login',
-    method: 'login'
+    controller: 'login',
+    methods: ['post', 'get'],
   },
-  default: {
+  index: {
     path: '',
-    method: 'index'
+    controller: 'Default',
   }
 };

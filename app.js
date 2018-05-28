@@ -6,12 +6,12 @@ const Router = require('koa-router');
 const app = require('./src/server/kernel.js');
 const router = new Router();
 
-router.get('/', async function (ctx, next) {
-  if(tookit.isMobileClient(ctx.request.header['user-agent'])){
-    return ctx.render('furrytail/mobile-index.twig', {});
-  }
+router.get('index','/', async function (ctx, next) {
+  return ctx.render('index/index.twig', {});
+});
 
-  return ctx.render('furrytail/index.twig', {});
+router.post('index','/', async function (ctx, next) {
+  return ctx.render('index/index.twig', {});
 });
 
 app.use(router.routes());

@@ -5,6 +5,7 @@ const path = require('path');
 const parameters = require('config/parameters.js');
 const views = require('tsj-koa-views');
 const ServiceManage = require('./service/ServiceManage.js');
+const glob = require('glob');
 const app = new Koa();
 
 app.use(staticCache(path.join(parameters.rootPath, '/public/'), {
@@ -38,9 +39,19 @@ app.use(
   )
 );
 
+//自动加载中间件
+let middlewares = glob.sync(path.join(parameters.serverPath, 'middleware/*Middleware.js'));
+middlewares.forEach(function(m) {
+  let middleware = require(m);
+  console.log(middleware);
+}, this);
+
+//  加载service
 app.use(async (ctx, next) => {
   let userService = ctx.state.serviceManage.create('user/UserService');
   await next();
 });
+
+// 加载路由，控制层映射
 
 module.exports = app;
