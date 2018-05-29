@@ -1,6 +1,6 @@
 module.exports = {
   options: {
-    profix: '/',
+    profix: '',
   },
   index: {
     path: '/',
