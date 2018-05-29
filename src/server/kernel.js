@@ -43,15 +43,19 @@ app.use(
 let middlewares = glob.sync(path.join(parameters.serverPath, 'middleware/*Middleware.js'));
 middlewares.forEach(function(m) {
   let middleware = require(m);
-  console.log(middleware);
+  if (Array.isArray(middleware)) {
+    middleware.forEach(function(mdw) {
+      app.use(mdw);
+    }, this);
+  } else {
+    app.use(middleware);
+  }
 }, this);
 
-//  加载service
+//  todo 加载service
 app.use(async (ctx, next) => {
   let userService = ctx.state.serviceManage.create('user/UserService');
   await next();
 });
-
-// 加载路由，控制层映射
 
 module.exports = app;
