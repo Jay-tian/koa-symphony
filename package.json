@@ -40,5 +40,12 @@
     "fix": "./node_modules/.bin/eslint --fix",
     "migrate": "node ./src/server/bin/sql-migrate.js",
     "m-generate": "node ./src/server/bin/migrate-generate.js"
-  }
+  },
+  "name": "koaeasy",
+  "version": "1.0.0",
+  "description": "koa2 webpack4 koa-router sequelize twig eslint",
+  "main": "app.js",
+  "repository": "https://github.com/Jay-tian/blog-by-koa.git",
+  "author": "jay",
+  "license": "MIT"
 }
