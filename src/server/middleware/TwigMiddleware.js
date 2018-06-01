@@ -2,7 +2,6 @@
 const views = require('tsj-koa-views');
 const parameters = require('../loader/ConfigLoader.js');
 
-
 let middleware = views(parameters.viewPath,
   {
     extension: 'twig',

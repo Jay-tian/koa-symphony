@@ -17,6 +17,5 @@ if(exists){
 } else {
   throw new Error('请填写配置文件！');
 }
-config['viewPath'] = path.join(config.serverPath, 'view');
-
+config['viewPath'] = path.join(config.serverPath, '/view/');
 module.exports = config;

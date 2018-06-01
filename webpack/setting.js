@@ -14,11 +14,6 @@ let setting = {
   publicPath: '/dist/',
   author: 'tianshengjie',
   purifyCssPaths: purifyCssPaths,
-  copyLibs: [
-    'validator', 
-    'swiper/dist',
-    'jquery/dist'
-  ],
 };
 
 module.exports = setting;

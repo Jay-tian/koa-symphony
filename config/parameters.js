@@ -1,9 +1,10 @@
 const process = require('process');
 const path = require('path');
+const version = require('./version.js');
 let rootPath = process.cwd();
 
 module.exports = {
   rootPath: rootPath,
   serverPath: path.join(rootPath + '/src/server/'),
-  version: '1.0.0',
+  version: version,
 };

@@ -2,7 +2,6 @@ const Koa = require('koa');
 const path = require('path');
 const glob = require('glob');
 const parameters = require('./loader/ConfigLoader.js');
-// const ServiceManage = require('./service/ServiceManage.js');
 require('./loader/TwigExtensionLoader.js');
 const toolkit = require('../common/tookit.js');
 const app = new Koa();
@@ -10,7 +9,6 @@ const app = new Koa();
 //自动加载中间件
 let middlewarePaths = glob.sync(path.join(__dirname, './middleware/*Middleware.js'));
 middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(parameters.serverPath, 'middleware/*Middleware.js'))));
-
 let middlewares = {};
 middlewarePaths.forEach(function(path) {
   let data = require(path);
@@ -19,20 +17,20 @@ middlewarePaths.forEach(function(path) {
   } else {
     middlewares[data.priority] = [data.middleware];
   }
-  let sort = Object.keys(middlewares).sort().reverse();
-  sort.forEach(function(key) {
-    middlewares[key].forEach(function(mdw) {
-      if (Array.isArray(mdw)) {
-        mdw.forEach(function(m) {
-          app.use(m);
-        }, this);
-      } else {
-        app.use(mdw);
-      }
-    });
-  }, this);
-
 });
+
+let sort = Object.keys(middlewares).sort().reverse();
+sort.forEach(function(key) {
+  middlewares[key].forEach(function(mdw) {
+    if (Array.isArray(mdw)) {
+      mdw.forEach(function(m) {
+        app.use(m);
+      }, this);
+    } else {
+      app.use(mdw);
+    }
+  });
+}, this);
 
 //  todo 加载service
 // app.use(async (ctx, next) => {

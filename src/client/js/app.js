@@ -1,4 +1,2 @@
-const version = require('../../server/config/version.js');
-window.app = {
-  version: version
-};
+const version = require('../../../config/version.js');
+console.log(version);
