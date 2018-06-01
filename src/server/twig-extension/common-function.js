@@ -1,5 +1,5 @@
-const parameters = require('config/parameters.js');
-const routers = require('loader/RouterLoader.js');
+const parameters = require('../loader/ConfigLoader.js');
+const routers = require('../loader/RouterLoader.js');
 
 module.exports = {
   asset: function(path) {

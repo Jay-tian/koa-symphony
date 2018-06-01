@@ -1,7 +1,9 @@
 const glob = require('glob');
 const Twig = require('twig');
 const path = require('path');
-const parameters = require('config/parameters.js');
+const parameters = require('./ConfigLoader.js');
+
+
 let extensionFunctions = {
   function: 'extendFunction',
   filter: 'extendFilter',

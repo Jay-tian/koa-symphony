@@ -1,4 +1,4 @@
-const parameters = require('config/parameters.js');
+const parameters = require('./ConfigLoader.js');
 const glob = require('glob');
 const path = require('path');
 

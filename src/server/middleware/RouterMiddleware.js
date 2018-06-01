@@ -5,4 +5,7 @@ routers.forEach(function(router) {
   middleware.push(router.routes());
 }, this);
 
-module.exports = middleware;
+module.exports = {
+  priority: 10,
+  middleware: middleware,
+};

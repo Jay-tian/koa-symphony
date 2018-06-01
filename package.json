@@ -9,7 +9,7 @@
     "cross-env": "^5.1.4",
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
-    "jay-webpack-scaffold": "^1.1.5",
+    "jay-webpack-scaffold": "^1.1.10",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
@@ -41,7 +41,7 @@
     "migrate": "node ./src/server/bin/sql-migrate.js",
     "m-generate": "node ./src/server/bin/migrate-generate.js"
   },
-  "name": "symphony",
+  "name": "koa-symphony",
   "version": "1.0.0",
   "description": "koa2 webpack4 koa-router sequelize twig eslint",
   "main": "app.js",
