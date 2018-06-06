@@ -1,9 +1,16 @@
 const parameters = require('../loader/ConfigLoader.js');
 const routers = require('../loader/RouterLoader.js');
+const path = require('path');
 
 module.exports = {
-  asset: function(path) {
-    return path + '?v=' + parameters.version;
+  asset: function(url, version = true) {
+    let rootPath = parameters.distAddress ? parameters.distAddress : '/';
+    url = rootPath+url;
+    if (!version) {
+      return url;
+    }
+
+    return url + '?v=' + parameters.version;
   },
   url: function(url) {
     let path;
@@ -13,5 +20,5 @@ module.exports = {
     });
 
     return path instanceof Error ? '/' : path;
-  },
+  }
 };

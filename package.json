@@ -43,9 +43,9 @@
     "m-generate": "node ./src/server/bin/migrate-generate.js"
   },
   "name": "koa-symphony",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "koa2 webpack4 koa-router sequelize twig eslint",
-  "main": "app.js",
+  "main": "./src/server/kernel.js",
   "repository": "https://github.com/Jay-tian/koaeasy.git",
   "author": "jay",
   "license": "MIT"
