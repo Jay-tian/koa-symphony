@@ -1,11 +1,13 @@
 const parameters = require('../loader/ConfigLoader.js');
 const routers = require('../loader/RouterLoader.js');
-const path = require('path');
+const webpackConfig = require(parameters.rootPath+'/webpack/setting.js');
+const assets = require(webpackConfig.output+'webpack.assets.json');
+console.log(assets);
 
 module.exports = {
   asset: function(url, version = true) {
-    let rootPath = parameters.distAddress ? parameters.distAddress : '/';
-    url = rootPath+url;
+    let rootPath = parameters.distAddress ? parameters.distAddress : '';
+    url = rootPath + url;
     if (!version) {
       return url;
     }

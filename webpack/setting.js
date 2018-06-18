@@ -10,10 +10,12 @@ let setting = {
   entry: rootPath + '/src/client/js/',
   output: rootPath + '/public/dist/',
   mainJs: rootPath + '/src/client/js/app.js',
-  lessPath: rootPath + '/src/client/less/pages',
+  lessPath: rootPath + '/src/client/less/pages/',
   publicPath: '/dist/',
   author: 'tianshengjie',
   purifyCssPaths: purifyCssPaths,
+  assetJs: false,
+  assetName: 'webpack.assets.json',
 };
 
 module.exports = setting;
