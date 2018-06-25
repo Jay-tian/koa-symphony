@@ -18,4 +18,5 @@ if(exists){
   throw new Error('请填写配置文件！');
 }
 config['viewPath'] = path.join(config.serverPath, '/view/');
+config['env'] =  process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 module.exports = config;

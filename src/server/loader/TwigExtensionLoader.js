@@ -9,8 +9,8 @@ let extensionFunctions = {
   filter: 'extendFilter',
 };
 
-let extensions = glob.sync(path.join(parameters.serverPath, 'twig-extension/**/*.js'));
-extensions = extensions.concat(glob.sync(path.join(__dirname, '../twig-extension/**/*.js')));
+let extensions = glob.sync(path.join(__dirname, '../twig-extension/**/*.js'));
+extensions = extensions.concat(glob.sync(path.join(parameters.serverPath, 'twig-extension/**/*.js')));
 
 (function(extensions){
   for (var key in extensions) {

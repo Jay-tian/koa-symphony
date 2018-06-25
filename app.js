@@ -1,2 +1,2 @@
 const app = require('./src/server/kernel.js');
-module.exports = app;
+app.listen(3030);
