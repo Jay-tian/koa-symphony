@@ -8,6 +8,7 @@
     "codeages-design": "^0.1.6",
     "cross-env": "^5.1.4",
     "eslint-loader": "^2.0.0",
+    "forever": "^0.15.3",
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
     "jay-webpack-scaffold": "^1.1.10",
@@ -40,10 +41,13 @@
     "webpack-dev": "NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
     "migrate": "node ./src/server/bin/sql-migrate.js",
-    "m-generate": "node ./src/server/bin/migrate-generate.js"
+    "m-generate": "node ./src/server/bin/migrate-generate.js",
+    "start": "set NODE_ENV=production & forever start app.js",
+    "stop": "forever stop app.js",
+    "restart": "forever restart app.js"
   },
   "name": "koa-symphony",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "koa2 webpack4 koa-router sequelize twig eslint",
   "main": "./src/server/kernel.js",
   "repository": "https://github.com/Jay-tian/koaeasy.git",

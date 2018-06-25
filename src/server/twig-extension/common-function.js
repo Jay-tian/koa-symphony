@@ -1,8 +1,7 @@
 const parameters = require('../loader/ConfigLoader.js');
 const routers = require('../loader/RouterLoader.js');
 const webpackConfig = require(parameters.rootPath+'/webpack/setting.js');
-const assets = require(webpackConfig.output+'webpack.assets.json');
-console.log(assets);
+const assets = 'production' == parameters.env ? require(webpackConfig.output+'webpack.assets.json') : {};
 
 module.exports = {
   asset: function(url, version = true) {
@@ -11,8 +10,13 @@ module.exports = {
     if (!version) {
       return url;
     }
-
-    return url + '?v=' + parameters.version;
+    
+    url = url.replace(webpackConfig.publicPath, '');
+    let urls = url.split('.');
+    console.log(assets);
+    console.log(urls[0]);
+    console.log(urls[1]);
+    return 'development' == parameters.env ? url: assets[urls[0]][urls[1]];
   },
   url: function(url) {
     let path;
