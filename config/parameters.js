@@ -7,5 +7,5 @@ module.exports = {
   rootPath: rootPath,
   serverPath: path.join(rootPath + '/src/server/'),
   version: version,
-  // distAddress: 'http://dist.koa-dev.com/main',
+  // distAddress: 'http://dist.koa-dev.com',
 };

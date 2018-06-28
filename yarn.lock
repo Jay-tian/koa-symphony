@@ -6299,9 +6299,9 @@ jay-respond@^1.4.3:
   version "1.4.3"
   resolved "https://registry.npmjs.org/jay-respond/-/jay-respond-1.4.3.tgz#b2052b3d391dc90f0c50a6ad7fbb4a87a0fe8a3d"
 
-jay-webpack-scaffold@^1.1.10:
-  version "1.1.13"
-  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.13.tgz#8bd6afa896383732702cb6f46553c6a17c0d5c6e"
+jay-webpack-scaffold@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.14.tgz#579a41b7a9dd59b991db3faeb4c8af7210badf28"
   dependencies:
     assets-webpack-plugin "^3.7.1"
     autoprefixer "^7.2.5"

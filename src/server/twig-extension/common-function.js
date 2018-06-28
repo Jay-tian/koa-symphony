@@ -5,18 +5,15 @@ const assets = 'production' == parameters.env ? require(webpackConfig.output+'we
 
 module.exports = {
   asset: function(url, version = true) {
-    let rootPath = parameters.distAddress ? parameters.distAddress : '';
-    url = rootPath + url;
+    let distAddress = parameters.distAddress ? parameters.distAddress : '';
     if (!version) {
       return url;
     }
     
-    url = url.replace(webpackConfig.publicPath, '');
-    let urls = url.split('.');
-    console.log(assets);
-    console.log(urls[0]);
-    console.log(urls[1]);
-    return 'development' == parameters.env ? url: assets[urls[0]][urls[1]];
+    let urls = url.replace(webpackConfig.publicPath, '').split('.');
+    url = 'development' == parameters.env ? url: assets[urls[0]][urls[1]];
+
+    return distAddress + url;
   },
   url: function(url) {
     let path;

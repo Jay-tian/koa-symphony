@@ -1,2 +1,2 @@
 const app = require('./src/server/kernel.js');
-app.listen(3030);
+app.listen(3000);
