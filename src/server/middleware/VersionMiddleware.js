@@ -1,4 +1,3 @@
-
 const parameters = require('../loader/ConfigLoader.js');
 let middleware =  async (ctx, next) => {
   ctx.state.version = parameters.version;

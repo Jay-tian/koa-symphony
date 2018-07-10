@@ -2,20 +2,19 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    console.log(Sequelize);
     console.log(queryInterface);
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+    console.log(Sequelize);
+    return queryInterface.createTable('User', {
+      name: Sequelize.STRING,
+      isBetaMember: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        allowNull: false
+      }
+    });
   },
 
   down: (queryInterface, Sequelize) => {
-    console.log(Sequelize);
-    console.log(queryInterface);
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.

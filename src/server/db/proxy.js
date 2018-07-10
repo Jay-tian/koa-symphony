@@ -1,5 +1,7 @@
+const db = require('./init.js');
 class ProxyDao {
   constructor(){
+    this.db = db;
     this.pool = [];
     this.proxyMethods = ['create'];
   }
@@ -27,4 +29,4 @@ class ProxyDao {
   }
 }
 
-module.exports = ProxyDao;
+module.exports = new ProxyDao();
