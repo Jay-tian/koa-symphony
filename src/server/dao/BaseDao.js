@@ -1,12 +1,16 @@
 
 const db = require('../db/init.js');
 module.exports = class BaseDao{
-  constructor(table) {
+  constructor() {
     this.db = db;
-    this.dao = this.db.define(table, {});
+  }
+
+  create() {
+
   }
 
   count() {
+
   }
 
   search() {

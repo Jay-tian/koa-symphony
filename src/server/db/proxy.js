@@ -1,18 +1,16 @@
-const db = require('./init.js');
 class ProxyDao {
   constructor(){
-    this.db = db;
     this.pool = [];
     this.proxyMethods = ['create'];
   }
 
-  dao(name) {
+  createDao(name) {
     return this.pool[name] ? this.pool[name] : require('dao/'+name);
   }
 
   execute(method) {
     this.before();
-    console.log(method);
+
     this.after();
   }
 
@@ -25,7 +23,7 @@ class ProxyDao {
   }
 
   create(parameter) {
-    console.log(parameter);
+
   }
 }
 

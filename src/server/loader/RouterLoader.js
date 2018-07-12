@@ -8,7 +8,6 @@ let routers = [];
 let controllers = require('./ControllerLoader.js');
 
 routerPaths.forEach(function(rts){
- 
   rts = require(rts);
   let options = Object.assign({profix: '/'}, rts.options);
   delete rts['options'];
@@ -16,14 +15,17 @@ routerPaths.forEach(function(rts){
   let router = new Router({
     prefix: options.profix
   });
-  
-  for(let rt in rts) {
-    let data = rts[rt];
+
+
+  for(let methodName in rts) {
+    let data = rts[methodName];
     let methods = data.methods || ['get'];
-    let fun = controllers[data.controller][rt];
-    router.register(data.path, methods, fun(), {
-      name: rt,
+    let controller = controllers[data.controller];
+    let middleware = controller[methodName]();
+    router.register(data.path, methods, middleware, {
+      name: methodName,
     });
+
     routers.push(router);
   }
 });
