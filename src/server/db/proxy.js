@@ -1,17 +1,22 @@
+const parameters = require('../loader/ConfigLoader.js');
+const path = require('path');
+
 class ProxyDao {
-  constructor(){
-    this.pool = [];
-    this.proxyMethods = ['create'];
-  }
+  constructor(name) {
+    if (ProxyDao.pools[name]) {
+      return ProxyDao.pools[name];
+    }
 
-  createDao(name) {
-    return this.pool[name] ? this.pool[name] : require('dao/'+name);
-  }
-
-  execute(method) {
-    this.before();
-
-    this.after();
+    let daoPath = path.join(parameters.serverPath, 'dao/', name);
+    this.dao = this.dao ? this.dao : require(daoPath);
+    let $proxy = new Proxy(this, {
+      get(target, key){
+        return target[key];
+      }
+    });
+    
+    ProxyDao.pools[name] = $proxy;
+    return $proxy;
   }
 
   before() {
@@ -23,8 +28,10 @@ class ProxyDao {
   }
 
   create(parameter) {
-
+    this.dao.create(parameter);
   }
 }
 
-module.exports = new ProxyDao();
+ProxyDao.pools = {};
+
+module.exports = ProxyDao;

@@ -1,8 +1,12 @@
 const BaseDao = require('../BaseDao.js');
 class UserDao extends BaseDao{
   constructor(){
-    super();
+    super('user');
+  }
+
+  create($fields) {
+    console.log($fields);
   }
 }
 
-exports = UserDao;
+module.exports = new UserDao();
