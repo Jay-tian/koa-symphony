@@ -6,9 +6,16 @@ class ProxyDao {
     if (ProxyDao.pools[name]) {
       return ProxyDao.pools[name];
     }
+    
+    let dao = {};
+    try {
+      let daoPath = path.join(parameters.serverPath, 'dao', name);
+      dao = require(daoPath);
+    } catch (error) {
+      dao = require('../dao/' + name);
+    }
 
-    let daoPath = path.join(parameters.serverPath, 'dao/', name);
-    this.dao = this.dao ? this.dao : require(daoPath);
+    this.dao = dao;
     let $proxy = new Proxy(this, {
       get(target, key){
         return target[key];
