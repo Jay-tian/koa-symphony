@@ -12,14 +12,14 @@ module.exports = class BaseService{
   }
 
   get(id) {
-    console.log(id);
+    return this.getCurrentDao().getById(id);
   }
 
   findByIds() {
 
   }
 
-  geetUserDao() {
+  getCurrentDao() {
     return new this.DaoProxy('User/UserDao');
   }
 };
