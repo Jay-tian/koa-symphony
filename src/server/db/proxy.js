@@ -1,21 +1,12 @@
-const parameters = require('../loader/ConfigLoader.js');
-const path = require('path');
+const ServiceLoader = require('../loader/ServiceLoader.js');
 
 class ProxyDao {
   constructor(name) {
     if (ProxyDao.pools[name]) {
       return ProxyDao.pools[name];
     }
-    
-    let dao = {};
-    try {
-      let daoPath = path.join(parameters.serverPath, 'dao', name);
-      dao = require(daoPath);
-    } catch (error) {
-      dao = require('../dao/' + name);
-    }
 
-    this.dao = dao;
+    this.dao = ServiceLoader.load('dao', name);
     let $proxy = new Proxy(this, {
       get(target, key){
         return target[key];
@@ -24,6 +15,10 @@ class ProxyDao {
     
     ProxyDao.pools[name] = $proxy;
     return $proxy;
+  }
+
+  getById(id) {
+    return this.dao.getById(id);
   }
 
   before() {

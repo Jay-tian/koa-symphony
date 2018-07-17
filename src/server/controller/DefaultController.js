@@ -6,18 +6,17 @@ class DefaultController extends BaseController {
   }
 
   index() {
-    let userDao = this.getUserDao();
-    userDao.create({
-      title: 'title1',
-    });
-
+    let user = this.getUserService().get(123);
+    // let f = async function() {
+    //   let users = await user;
+    //   return users;
+    // }
+     
     return async (ctx, next) => {
-      return ctx.render('index/index.twig', {});
+       //let users = await user;
+    //  console.log(users.dataValues);
+      return ctx.render('index/index.twig');
     };
-  }
-
-  getUserDao() {
-    return new this.DaoProxy('User/UserDao');
   }
 }
 

@@ -5,7 +5,6 @@ class UserDao extends BaseDao{
   }
 
   create($fields) {
-    console.log($fields);
   }
 }
 
