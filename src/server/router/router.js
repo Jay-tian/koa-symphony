@@ -6,4 +6,8 @@ module.exports = {
     path: '/',
     controller: 'Default',
   },
+  login: {
+    path: '/login',
+    controller: 'Login',
+  },
 };
