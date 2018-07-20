@@ -1656,6 +1656,10 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
+bootstrap@3:
+  version "3.3.7"
+  resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
 bootstrap@^4.0.0:
   version "4.1.1"
   resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-4.1.1.tgz#3aec85000fa619085da8d2e4983dfd67cf2114cb"
@@ -2530,12 +2534,6 @@ coa@~2.0.1:
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
-
-codeages-design@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.npmjs.org/codeages-design/-/codeages-design-0.1.6.tgz#ade386afd311044fe439ac3c8b7e8672435a272c"
-  dependencies:
-    jquery "^3.2.1"
 
 collapse-white-space@^1.0.2:
   version "1.0.4"
@@ -6418,7 +6416,7 @@ jquery-validation@^1.17.0:
   dependencies:
     jquery "^1.7 || ^2.0 || ^3.1"
 
-jquery@>=1.6.0, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.2.1, jquery@^3.3.1:
+jquery@>=1.6.0, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
