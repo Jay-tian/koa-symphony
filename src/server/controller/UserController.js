@@ -7,7 +7,7 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
-      console.log(ctx.request);
+      console.log(ctx.request.body);
       return ctx.render('login/index.twig');
     };
   }
