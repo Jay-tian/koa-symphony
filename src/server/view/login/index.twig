@@ -1,8 +1,21 @@
 {% extends 'layout.twig' %}
 
 {% set title = "登录" %}
-{# {% set scripts = ['/dist/js/index/index.js'] %} #}
+{% set scripts = ['/dist/js/index/index.js'] %} 
+{% set styles = ['/dist/css/main.css'] %} 
 
-{% block main %}
-  asdfasdf
+{% block body %}
+  <div class="login">
+    <div id="particles-js" class="particles"></div>
+    <div class="login-main">
+      <form id="login" method="post" class="">
+          <input class="form-control" placeholder="用户名"  name="_username" type="text"／>
+          <input class="form-control" placeholder="密码"  type="password" name="_password"／>
+          <div class="btn-group clearfix">
+              <button class="btn-primary btn-main" type="submit">登陆</button>
+              <button class="btn-primary js-register" type="button">注册</button>
+          </div>
+      </form>
+    </div>
+  </div>
 {% endblock %} 

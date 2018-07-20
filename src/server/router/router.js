@@ -8,6 +8,7 @@ module.exports = {
   },
   login: {
     path: '/login',
-    controller: 'Login',
+    controller: 'User',
+    methods: ['get', 'post']
   },
 };

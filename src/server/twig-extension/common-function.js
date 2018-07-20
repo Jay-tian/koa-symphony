@@ -4,17 +4,17 @@ const webpackConfig = require(parameters.rootPath+'/webpack/setting.js');
 const assets = 'production' == parameters.env ? require(webpackConfig.output+'webpack.assets.json') : {};
 
 module.exports = {
-  asset: function(url, version = true) {
+  asset: function(url) {
     let rootPath = parameters.distAddress ? parameters.distAddress : '';
     url = rootPath + url;
-    if (!version) {
+    if ('development' == parameters.env) {
       return url;
     }
     
     url = url.replace(webpackConfig.publicPath, '');
     let urls = url.split('.');
     
-    return 'development' == parameters.env ? url: assets[urls[0]][urls[1]];
+    return assets[urls[0]][urls[1]];
   },
   url: function(url) {
     let path;
