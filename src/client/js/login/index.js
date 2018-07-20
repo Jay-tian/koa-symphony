@@ -1,6 +1,5 @@
 import particlesJson from './particles.json';
-
-const particlesJS = require ('particles.js');
+require('particles.js');
 particlesJS('particles-js', particlesJson);
 
 // $('.js-register').on('click',function(){
