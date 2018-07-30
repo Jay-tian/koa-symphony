@@ -1,4 +1,4 @@
-const BaseController = require('./Base');
+const BaseController = require('./BaseController');
 
 class UserController extends BaseController {
   constructor(){
@@ -7,7 +7,6 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
-      console.log(ctx.request.body);
       return ctx.render('login/index.twig');
     };
   }

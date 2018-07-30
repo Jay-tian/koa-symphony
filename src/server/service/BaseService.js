@@ -1,8 +1,5 @@
-const DaoProxy = require('../db/Proxy.js');
-
 module.exports = class BaseService{
   constructor() {
-    this.DaoProxy = DaoProxy;
   }
 
   count() {
@@ -11,15 +8,19 @@ module.exports = class BaseService{
   search() {
   }
 
-  get(id) {
-    return this.getCurrentDao().getById(id);
+  getById(id) {
+    return this.getUserDao().getById(id);
   }
 
   findByIds() {
 
   }
 
-  getCurrentDao() {
-    return new this.DaoProxy('User/UserDao');
+  getUserDao() {
+    return this.createDao('User/UserDao');
+  }
+
+  createDao(name) {
+    return global.service.load('dao', name);
   }
 };

@@ -16,6 +16,9 @@ let setting = {
   purifyCssPaths: purifyCssPaths,
   assetJs: false,
   assetName: 'webpack.assets.json',
+  alias: {
+    common: path.join(rootPath, 'src/common'),
+  }
 };
 
 module.exports = setting;

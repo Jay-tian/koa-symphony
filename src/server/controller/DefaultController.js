@@ -1,4 +1,4 @@
-const BaseController = require('./Base');
+const BaseController = require('./BaseController');
 
 class DefaultController extends BaseController {
   constructor(){
@@ -6,8 +6,10 @@ class DefaultController extends BaseController {
   }
 
   index() {
-    let user = this.getUserService().get(1);
-    return async (ctx, next) => {
+    let user = this.getUserService().getById(1);
+    console.log(user);
+    
+    return async (ctx) => {
       return ctx.render('index/index.twig');
     };
   }

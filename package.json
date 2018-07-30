@@ -15,6 +15,7 @@
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.8.2",
     "koa-static": "^4.0.2",
     "koa-static-cache": "^5.1.2",
     "mysql": "^2.15.0",

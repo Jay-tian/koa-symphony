@@ -1,3 +1,5 @@
+const xxtea = require('./xxtea.js');
+
 exports.arrayIndex = function(data, column){
   let newData = [];
   if (!data) {
@@ -43,3 +45,4 @@ exports.requires = function(data, keys){
 exports.unique = function(data) {
   return Array.from(new Set(data));
 };
+

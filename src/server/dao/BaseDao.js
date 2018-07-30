@@ -13,9 +13,8 @@ module.exports = class BaseDao{
   }
 
   getById(id) {
-    this.model.findById(id).then((a) => {
-    });
-
+    // this.model.findById(id).then((d) => {
+    // });
     return this.model.findById(id);
   }
 

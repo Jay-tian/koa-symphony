@@ -9,6 +9,7 @@ module.exports = {
       "fullpage": true,
       "Swiper": true,
       "particlesJS": true,
+      "__dirname": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

@@ -2,20 +2,19 @@
 {
   "particles": {
     "number": {
-      "value": 25,
+      "value": 20,
       "density": {
         "enable": true,
-        "value_area": 600
+        "value_area": 700
       }
     },
     "color": {
-      "value": "#badfe5"
+      "value": "#2da4d9"
     },
     "shape": {
       "type": "circle",
       "stroke": {
-        "width": 0,
-        "color": "#fff"
+        "width": 0
       },
       "image": {
         "src": "img/github.svg",
@@ -46,7 +45,7 @@
     "line_linked": {
       "enable": true,
       "distance": 300,
-      "color": "#badfe5",
+      "color": "#2da4d9",
       "opacity": 0.2,
       "width": 2
     },

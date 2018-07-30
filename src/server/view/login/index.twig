@@ -8,13 +8,18 @@
   <div class="login">
     <div id="particles-js" class="particles"></div>
     <div class="login-main">
-      <form id="login" method="post" class="">
-          <input class="form-control" placeholder="用户名"  name="_username" type="text"／>
-          <input class="form-control" placeholder="密码"  type="password" name="_password"／>
-          <div class="btn-group clearfix">
-              <button class="btn-primary btn-main" type="submit">登陆</button>
-              <button class="btn-primary js-register" type="button">注册</button>
+      <form id="login" method="post" class="form-horizontal">
+        <div class="control-group">
+          <div class="controls">
+            <input placeholder="用户名" class="form-control" name="username" type="text">
           </div>
+        </div>
+        <div class="control-group mt2">
+          <div class="controls">
+            <input placeholder="密码"  class="form-control" type="password" name="password">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-main mt2" type="submit">登陆</button>
       </form>
     </div>
   </div>

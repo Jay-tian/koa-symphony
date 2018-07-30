@@ -1,4 +1,5 @@
 import particlesJson from './particles.json';
+const xxtea = require('common/xxtea.js');
 require('particles.js');
 particlesJS('particles-js', particlesJson);
 

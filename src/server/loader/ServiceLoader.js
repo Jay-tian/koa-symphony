@@ -10,7 +10,6 @@ class ServiceLoader {
     }
     try {
       let servicePath = path.join(parameters.serverPath, type, name);
-      
       service = require(servicePath);
     } catch (error) {
       service = require(`../${type}/` + name);
