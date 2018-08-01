@@ -13,15 +13,7 @@ exports.arrayIndex = function(data, column){
 };
 
 exports.timestamp = function(){
-  var time = new Date();  
-  var y = time.getFullYear();  
-  var m = time.getMonth()+1;  
-  var d = time.getDate();  
-  var h = time.getHours();  
-  var mm = time.getMinutes();  
-  var s = time.getSeconds();  
-
-  return `${y}${m}${d}${h}${mm}${s}`;  
+  return Math.round(new Date() / 1000);
 };
 
 exports.isMobileClient = function(agent){

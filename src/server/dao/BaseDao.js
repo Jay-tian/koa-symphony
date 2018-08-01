@@ -1,25 +1,19 @@
 
 const db = require('../db/init.js');
+const Sequelize = require('sequelize');
 module.exports = class BaseDao{
   constructor(table) {
     this.db = db;
     this.table = table;
-    this.model = this.db.define(table,  { /* bla */ }, {
-      timestamps: true,
-      freezeTableName: true,
-      createdAt: 'createdTime',
-      updatedAt: 'updatedTime',
-    });
+    this.createModel();
   }
 
   getById(id) {
-    // this.model.findById(id).then((d) => {
-    // });
     return this.model.findById(id);
   }
 
-  create() {
-    
+  create(params) {
+    return this.model.create(params);
   }
 
   count() {
@@ -34,5 +28,32 @@ module.exports = class BaseDao{
   }
 
   findByIds() {
+  }
+
+  createModel(config = {}) {
+    let defaultConfig = {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      createdTime: {
+        type: Sequelize.INTEGER,
+      },
+      updatedTime: {
+        type: Sequelize.INTEGER,
+      },
+    };
+
+    config = Object.assign(defaultConfig, this.config());
+    this.model = this.db.define(this.table, config, {
+      timestamps: true,
+      freezeTableName: true,
+      createdAt: 'createdTime',
+      updatedAt: 'updatedTime',
+    });
+  }
+
+  config() {
   }
 };

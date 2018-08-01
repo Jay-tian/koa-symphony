@@ -3,19 +3,12 @@ class ProxyDao {
     this.dao = dao;
   }
 
-  getById(id) {
-    return this.dao.getById(id);
-  }
-
-  before() {
-  }
-
-  after() {
-  }
-
-  create(parameter) {
-    this.dao.create(parameter);
-  }
 }
 
-module.exports = ProxyDao;
+module.exports = function (db) {
+  return new Proxy(db, {
+    get: function(target, name){
+      return name in target ? target[name] : 37;
+    }
+  });
+}

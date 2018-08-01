@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface) => {
     queryInterface.sequelize.query(
       `CREATE TABLE IF NOT EXISTS user(
-      id int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+      id int(11) NOT NULL COMMENT '用户ID' AUTO_INCREMENT,
       email varchar(128) NOT NULL COMMENT '用户邮箱',
       password varchar(64) NOT NULL COMMENT '用户密码',
       salt varchar(32) NOT NULL COMMENT '密码SALT',
@@ -22,7 +22,7 @@ module.exports = {
       UNIQUE KEY (email),
       UNIQUE KEY (nickname),
       KEY updatedTime (updatedTime)
-      ) ENGINE = InnoDB  DEFAULT CHARSET= utf8;`
+      ) ENGINE = InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET= utf8;`
     );
   },
 

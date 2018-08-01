@@ -1,17 +1,29 @@
 const session = require('koa-session');
-const service = require('../loader/ServiceLoader.js');
+const tookit = require('../../common/tookit.js');
+const sessionDao = global.service.load('dao', '/system/sessionDao.js');
 
-let store = {
-  get (key, maxAge) {
-    
-    //return userService.getById(1);
-  },
-  set (key, sess, maxAge) {
-    
-  },
-  destroy (key) {
+class Store {
+  constructor() {
+
   }
-};
+
+  async get(sid) {
+
+  }
+
+  async set(session, opts) {
+    let sess = {
+      // sessId: session,
+      deadline: parseInt(opts._expire / 1000) + opts._maxAge,
+      // data: '',
+    }
+
+    sessionDao.create(sess);
+  }
+
+  async destroy(sid) {
+  }
+}
 
 const CONFIG = {
   key: 'SESSID',
@@ -20,7 +32,7 @@ const CONFIG = {
   httpOnly: true,
   signed: false,
   rolling: false,
-  store: store,
+  store: new Store(),
 };
 
 module.exports = function (app) {

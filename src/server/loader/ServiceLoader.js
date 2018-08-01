@@ -14,7 +14,7 @@ class ServiceLoader {
     } catch (error) {
       service = require(`../${type}/` + name);
     }
-    
+
     ServiceLoader.pools[poolName] = service;
     return ServiceLoader.pools[poolName];
   }
