@@ -37,20 +37,12 @@ module.exports = class BaseDao{
         primaryKey: true,
         autoIncrement: true,
       },
-      createdTime: {
-        type: Sequelize.INTEGER,
-      },
-      updatedTime: {
-        type: Sequelize.INTEGER,
-      },
     };
 
     config = Object.assign(defaultConfig, this.config());
     this.model = this.db.define(this.table, config, {
       timestamps: true,
       freezeTableName: true,
-      createdAt: 'createdTime',
-      updatedAt: 'updatedTime',
     });
   }
 

@@ -8,14 +8,14 @@ class Store {
   }
 
   async get(sid) {
-
+    return 123;
   }
 
   async set(session, opts) {
     let sess = {
-      // sessId: session,
+      sessId: session,
       deadline: parseInt(opts._expire / 1000) + opts._maxAge,
-      // data: '',
+      data: '',
     }
 
     sessionDao.create(sess);

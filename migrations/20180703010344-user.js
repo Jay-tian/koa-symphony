@@ -16,12 +16,12 @@ module.exports = {
       loginIp varchar(64) NOT NULL DEFAULT '' COMMENT '最后登录IP',
       loginSessionId varchar(255) NOT NULL DEFAULT '' COMMENT '最后登录会话ID',
       registerIp varchar(64) NOT NULL DEFAULT '' COMMENT '注册IP',
-      createdTime int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
-      updatedTime INT UNSIGNED NOT NULL DEFAULT '0' COMMENT '最后更新时间',
+      registerTime int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
+      createdAt datetime(0) COMMENT '创建时间',
+      updatedAt datetime(0) COMMENT '最后更新时间',
       PRIMARY KEY (id),
       UNIQUE KEY (email),
-      UNIQUE KEY (nickname),
-      KEY updatedTime (updatedTime)
+      UNIQUE KEY (nickname)
       ) ENGINE = InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET= utf8;`
     );
   },
