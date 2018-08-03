@@ -8,6 +8,16 @@ class Store {
 
   async get(sid) {
     let result = await this.sessionDao.getBySessId(sid);
+    if (!result) {
+      return;
+    }
+    result = {
+      id: result.dataValues['id'],
+      deadline: result.dataValues['deadline'],
+      sessId: result.get('sessId'),
+      data: result.get('data'),
+    }
+
     return result;
   }
 
@@ -27,10 +37,13 @@ class Store {
       return this.sessionDao.update(session, {data: data});
     }
 
+    data = {
+      userId: 0,
+    };
     let sess = {
       sessId: session,
       deadline: parseInt(opts._expire / 1000) + opts._maxAge,
-      data: JSON.stringify(opts.data),
+      data: JSON.stringify(Object.assign(data, opts.data)),
     };
 
     return this.sessionDao.create(sess);

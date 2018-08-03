@@ -9,4 +9,9 @@ module.exports = class BaseController{
   createService(name) {
     return global.service.load('service', name);
   }
+
+  getCurrentUser(session)
+  {
+    return this.getUserService().getById(session.userId);
+  }
 };

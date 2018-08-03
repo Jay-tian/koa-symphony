@@ -8,9 +8,11 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
+      let currentUser = await this.getCurrentUser(ctx.session);
+      console.log(currentUser);
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
-        console.log(body);
+
        // ctx.session.data = {id: 1};
       }
 
