@@ -1,24 +1,33 @@
 const session = require('koa-session');
 const tookit = require('../../common/tookit.js');
-const sessionDao = global.service.load('dao', '/system/sessionDao.js');
 
 class Store {
   constructor() {
-
+    this.sessionDao = global.service.load('dao', '/system/sessionDao.js');
   }
 
   async get(sid) {
-    return 123;
+    let result = await this.sessionDao.getBySessId(sid);
+
+    return result;
   }
 
-  async set(session, opts) {
+  async set(session, opts = {}) {
+    let result = await this.sessionDao.getBySessId(session);
+    if (result) {
+      let data = result.get('data');
+      data = JSON.stringify(Object.assign(data, opts.data));
+      
+      return this.sessionDao.update(session, {data: data});
+    }
+
     let sess = {
       sessId: session,
       deadline: parseInt(opts._expire / 1000) + opts._maxAge,
-      data: '',
-    }
+      data: JSON.stringify(opts.data),
+    };
 
-    sessionDao.create(sess);
+    return this.sessionDao.create(sess);
   }
 
   async destroy(sid) {

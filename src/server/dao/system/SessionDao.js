@@ -5,15 +5,42 @@ class SessionDao extends BaseDao{
   constructor(){
     super('session');
   }
-  create($fields) {
-    this.model.create($fields);
+
+  update(id, fields) {
+    return this.model.update(fields, {where: {sessId: id}});
+  }
+
+  create(fields) {
+    return this.model.create(fields);
+  }
+
+  getBySessId(id) {
+    return this.model.findOne({where : {sessId: id}});
   }
 
   config() {
     return {
-      sessId: {type:Sequelize.STRING(128),  unique: true },
-      data: {type:Sequelize.BLOB},
-      deadline: {type:Sequelize.INTEGER,  allowNull: false},
+      sessId: {
+        type:Sequelize.STRING(128),
+        unique: true,
+        get: function(name) {
+          let sessId = this.getDataValue(name);
+          return sessId ? this.getDataValue(name).toString() : '';
+        }
+      },
+      data: {
+        type:Sequelize.BLOB,
+        get: function(name) {
+          let data = this.getDataValue(name);
+          console.log(123555555);
+          console.log(this);
+          return data ? JSON.parse(data.toString()) : {};
+        }
+      },
+      deadline: {
+        type:Sequelize.INTEGER,
+        allowNull: false,
+      },
     };
   }
 }

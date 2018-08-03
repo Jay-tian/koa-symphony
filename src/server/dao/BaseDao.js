@@ -30,7 +30,7 @@ module.exports = class BaseDao{
   findByIds() {
   }
 
-  createModel(config = {}) {
+  createModel() {
     let defaultConfig = {
       id: {
         type: Sequelize.INTEGER,
@@ -39,7 +39,7 @@ module.exports = class BaseDao{
       },
     };
 
-    config = Object.assign(defaultConfig, this.config());
+    let config = Object.assign(defaultConfig, this.config());
     this.model = this.db.define(this.table, config, {
       timestamps: true,
       freezeTableName: true,
