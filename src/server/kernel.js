@@ -28,7 +28,10 @@ middlewarePaths.forEach(function(path) {
   }
 });
 
-let sort = Object.keys(middlewares).sort().reverse();
+let sort = Object.keys(middlewares).sort(function (x,y) {
+  return x-y;
+});
+
 sort.forEach(function(key) {
   middlewares[key].forEach(function(mdw) {
     if (Array.isArray(mdw)) {

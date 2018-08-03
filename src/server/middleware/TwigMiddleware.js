@@ -15,6 +15,6 @@ let middleware = views(parameters.viewPath,
 );
 
 module.exports = {
-  priority: 25,
+  priority: 0,
   middleware: middleware,
 };

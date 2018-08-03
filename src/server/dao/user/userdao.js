@@ -20,7 +20,6 @@ class UserDao extends BaseDao{
       lockDeadline: {type: Sequelize.INTEGER,  defaultValue: 0,},
       loginTime: {type: Sequelize.INTEGER,  defaultValue: 0},
       loginIp: {type:Sequelize.STRING(64),  allowNull: false, defaultValue: ''},
-      loginSessionId: {type:Sequelize.STRING(255), defaultValue: ''},
       registerIp: { type:Sequelize.STRING(64),  allowNull: false},
     };
   }

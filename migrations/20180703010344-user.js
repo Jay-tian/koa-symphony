@@ -14,7 +14,6 @@ module.exports = {
       lockDeadline int(10) not null default '0' COMMENT '帐号锁定期限',
       loginTime int(11) NOT NULL DEFAULT '0' COMMENT '最后登录时间',
       loginIp varchar(64) NOT NULL DEFAULT '' COMMENT '最后登录IP',
-      loginSessionId varchar(255) NOT NULL DEFAULT '' COMMENT '最后登录会话ID',
       registerIp varchar(64) NOT NULL DEFAULT '' COMMENT '注册IP',
       registerTime int(10) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
       createdAt datetime(0) COMMENT '创建时间',

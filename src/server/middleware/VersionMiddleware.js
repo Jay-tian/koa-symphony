@@ -6,6 +6,6 @@ let middleware =  async (ctx, next) => {
 };
 
 module.exports = {
-  priority: 20,
+  priority: 0,
   middleware: middleware,
 };

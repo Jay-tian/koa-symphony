@@ -7,6 +7,6 @@ let middleware = staticCache(path.join(parameters.rootPath, '/public/'), {
 });
 
 module.exports = {
-  priority: 15,
+  priority: 0,
   middleware: middleware
 };
