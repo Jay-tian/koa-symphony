@@ -32,8 +32,6 @@ class SessionDao extends BaseDao{
         type:Sequelize.BLOB,
         get: function(name) {
           let data = this.getDataValue(name);
-          console.log(123555555);
-          console.log(this);
           return data ? JSON.parse(data.toString()) : {};
         }
       },

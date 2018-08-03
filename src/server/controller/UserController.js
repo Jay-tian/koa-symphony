@@ -6,8 +6,10 @@ class UserController extends BaseController {
   }
 
   login() {
-    let user = this.getUserService().getById(1);
     return async (ctx, next) => {
+      if ('POST' == ctx.request.method) {
+        let body = ctx.request.body;
+      }
       ctx.session.data = {id: 12, courseId: 20};
       return ctx.render('login/index.twig');
     };
