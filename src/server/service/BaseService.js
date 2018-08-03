@@ -9,15 +9,11 @@ module.exports = class BaseService{
   }
 
   getById(id) {
-    return this.getUserDao().getById(id);
+    console.log(id);
+    return this.getCurrentDao().getById(id);
   }
 
   findByIds() {
-
-  }
-
-  getUserDao() {
-    return this.createDao('User/UserDao');
   }
 
   createDao(name) {

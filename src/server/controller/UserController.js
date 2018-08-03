@@ -8,12 +8,9 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
-      let currentUser = await this.getCurrentUser(ctx.session);
-      console.log(currentUser);
+      // let currentUser = await this.getCurrentUser(ctx.session);
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
-
-       // ctx.session.data = {id: 1};
       }
 
       return ctx.render('login/index.twig');

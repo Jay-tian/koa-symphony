@@ -16,8 +16,8 @@ class Store {
       deadline: result.dataValues['deadline'],
       sessId: result.get('sessId'),
       data: result.get('data'),
-    }
-
+      userId: result.get('data').userId|0,
+    };
     return result;
   }
 
@@ -37,7 +37,7 @@ class Store {
       return this.sessionDao.update(session, {data: data});
     }
 
-    data = {
+    let data = {
       userId: 0,
     };
     let sess = {

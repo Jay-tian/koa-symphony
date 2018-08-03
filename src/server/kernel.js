@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const path = require('path');
 const glob = require('glob');
-global.koa = {
+global.koaSymphony = {
   parameters: require('./loader/ConfigLoader.js'),
   service: require('./loader/ServiceLoader.js'),
 };

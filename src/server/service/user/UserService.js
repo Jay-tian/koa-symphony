@@ -4,9 +4,8 @@ class UserService extends BaseService{
     super();
   }
 
-  getById(id)
-  {
-    return this.getUserDao().getById(id);
+  getCurrentDao() {
+    return this.createDao('User/UserDao');
   }
 }
 
