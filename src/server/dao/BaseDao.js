@@ -12,10 +12,14 @@ module.exports = class BaseDao{
     return this.model.findById(id);
   }
 
-  create(params) {
-    return this.model.create(params);
+  create(fields) {
+    return this.model.create(fields);
   }
 
+  delete(id) {
+    return this.model.destroy({'where':{'id':id}});
+  }
+  
   count() {
     
   }

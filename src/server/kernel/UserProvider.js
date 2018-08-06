@@ -4,7 +4,7 @@ module.exports = class {
   }
 
   isLogin() {
-    return user ? true : false;
+    return this.user ? true : false;
   }
 
   isAdmin() {

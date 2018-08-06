@@ -2,6 +2,10 @@ module.exports = class BaseService{
   constructor() {
   }
 
+  delete() {
+    
+  }
+
   count() {
   }
 

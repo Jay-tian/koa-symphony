@@ -6,6 +6,14 @@ class SessionDao extends BaseDao{
     super('session');
   }
 
+  delete(id) {
+    return this.model.destroy({'where':{'id':id}});
+  }
+
+  deleteBySessId(sessId) {
+    return this.model.destroy({'where':{'sessId':sessId}});
+  }
+
   update(id, fields) {
     return this.model.update(fields, {where: {sessId: id}});
   }

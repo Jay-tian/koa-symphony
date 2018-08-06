@@ -8,13 +8,24 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
-      console.log(ctx.state.user.isAdmin());
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
       }
 
       return ctx.render('login/index.twig');
     };
+  }
+
+  logout() {
+    return async (ctx, next) => {
+      this.sessionService().deleteBySessId(ctx.session.sessId);
+      return ctx.render('login/index.twig');
+    };
+  }
+
+  sessionService()
+  {
+    return this.createService('system/SessionService');
   }
 }
 

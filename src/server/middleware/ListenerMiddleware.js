@@ -4,7 +4,13 @@ let middleware =  async (ctx, next) => {
     ctx.redirect('back', '/');
   }
 
+  if (0 == ctx.request.url.indexOf('/login') && ctx.state.user.isLogin()) {
+    ctx.redirect('back', '/');
+  }
 
+  if (0 == ctx.request.url.indexOf('/logout') && !ctx.state.user.isLogin()) {
+    ctx.redirect('back', '/');
+  }
 
   await next();
 };

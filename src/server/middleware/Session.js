@@ -48,11 +48,11 @@ class Store {
       data: JSON.stringify(Object.assign(data, opts.data)),
     };
 
-console.log(sess);
     return this.sessionDao.create(sess);
   }
 
   async destroy(sid) {
+    return this.sessionDao.deleteBySessId(sid);
   }
 }
 
