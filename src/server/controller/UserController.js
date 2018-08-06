@@ -8,7 +8,7 @@ class UserController extends BaseController {
 
   login() {
     return async (ctx, next) => {
-      // let currentUser = await this.getCurrentUser(ctx.session);
+      console.log(ctx.state.user.isAdmin());
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
       }

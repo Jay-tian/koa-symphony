@@ -6,10 +6,8 @@ class DefaultController extends BaseController {
   }
 
   index() {
-    let user = this.getUserService().getById(1);
-
     return async (ctx) => {
-      user =  await user;
+      console.log(ctx.state.user);
       return ctx.render('index/index.twig');
     };
   }
