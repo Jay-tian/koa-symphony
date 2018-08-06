@@ -1,21 +1,13 @@
 module.exports = class {
-  constructor(params) {
-    this.params = params;
+  constructor(user) {
+    this.user = user;
   }
 
   isAdmin() {
-    if (!this.params['roles']) {
-      return false;
-    }
-
-    if ('admin' == this.params['roles']) {
-      return true;
-    }
-
-    return false;
+    return this.user.get('roles').indexOf('admin') >= 0 ? true : false ;
   }
 
   get(key) {
-    return this.params[key] ? this.params[key] : '';
+    return this.user.get(key);
   }
 };

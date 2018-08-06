@@ -15,7 +15,15 @@ class UserDao extends BaseDao{
       password: {type:Sequelize.STRING(64),  allowNull: false},
       salt: {type:Sequelize.STRING(32),  allowNull: false},
       nickname: {type:Sequelize.STRING(64),  allowNull: false, unique: true},
-      roles: {type:Sequelize.STRING(255),  allowNull: false},
+      roles: {
+        type:Sequelize.STRING(255),
+        allowNull: false,
+        get: function(name) {
+          let roles = this.getDataValue(name);
+          
+          return roles.replace(/(^\|*)|(\|*$)/g, '').split('|');
+        }
+      },
       locked: {type: Sequelize.BOOLEAN,  defaultValue: 0,},
       lockDeadline: {type: Sequelize.INTEGER,  defaultValue: 0,},
       loginTime: {type: Sequelize.INTEGER,  defaultValue: 0},

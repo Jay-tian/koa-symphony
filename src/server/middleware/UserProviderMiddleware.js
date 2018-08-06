@@ -1,15 +1,10 @@
 const User = require('../kernel/UserProvider.js');
+const userDao = global.service.load('dao', 'user/UserDao.js');
 
 let middleware =  async (ctx, next) => {
-  if (ctx.session.data) {
-    ctx.state.user = new User(ctx.session.data);
-  } else {
-    ctx.session.data = {
-      userId: 0
-    };
-    ctx.state.user = new User({userId: 0});
-  }
-
+  let user  = await userDao.getById(ctx.session.userId);
+  
+  ctx.state.user = new User(user);
   await next();
 };
 

@@ -3,7 +3,7 @@ const tookit = require('../../common/tookit.js');
 
 class Store {
   constructor() {
-    this.sessionDao = global.service.load('dao', '/system/sessionDao.js');
+    this.sessionDao = global.service.load('dao', 'system/sessionDao.js');
   }
 
   async get(sid) {
@@ -11,6 +11,7 @@ class Store {
     if (!result) {
       return;
     }
+
     result = {
       id: result.dataValues['id'],
       deadline: result.dataValues['deadline'],
@@ -18,6 +19,7 @@ class Store {
       data: result.get('data'),
       userId: result.get('data').userId|0,
     };
+
     return result;
   }
 
@@ -38,7 +40,7 @@ class Store {
     }
 
     let data = {
-      userId: 0,
+      userId: 1,
     };
     let sess = {
       sessId: session,
@@ -46,6 +48,7 @@ class Store {
       data: JSON.stringify(Object.assign(data, opts.data)),
     };
 
+console.log(sess);
     return this.sessionDao.create(sess);
   }
 
