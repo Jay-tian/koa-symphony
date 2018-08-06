@@ -40,7 +40,7 @@ class Store {
     }
 
     let data = {
-      userId: 1,
+      userId: 0,
     };
     let sess = {
       sessId: session,
