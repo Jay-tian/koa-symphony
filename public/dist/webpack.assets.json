@@ -17,10 +17,10 @@
   "": {
     "": [
       "/dist/iconfont/f476",
+      "/dist/iconfont/8988",
       "/dist/iconfont/e18b",
       "/dist/iconfont/fa27",
-      "/dist/iconfont/448c",
-      "/dist/iconfont/8988"
+      "/dist/iconfont/448c"
     ],
     "js": "/dist/js/libs/jquery/dist/jquery.min.js"
   }
