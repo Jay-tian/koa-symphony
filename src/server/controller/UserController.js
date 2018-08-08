@@ -16,6 +16,12 @@ class UserController extends BaseController {
     };
   }
 
+  register() {
+    return async (ctx, next) => {
+      return ctx.render('login/index.twig');
+    };
+  }
+
   logout() {
     return async (ctx, next) => {
       this.sessionService().deleteBySessId(ctx.session.sessId);

@@ -3,12 +3,15 @@ import particlesJson from './particles.json';
 require('particles.js');
 particlesJS('particles-js', particlesJson);
 
-// $('.js-register').on('click',function(){
-//   $('.login-main').addClass('register-hide');
-//   $('.register-main').removeClass('register-hide');
-// });
+$('.js-trans').on('click',function(){
+  $(this).closest('.login-main').removeClass('active').siblings().addClass('active');
+});
 
-// $('.js-login').on('click',function(){
-//     $('.register-main').addClass('register-hide');
-//     $('.login-main').removeClass('register-hide');
-// });
+
+$('#login').validate({
+  rules: {
+    username: {
+      required: true,
+    }
+  }
+});

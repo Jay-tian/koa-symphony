@@ -18,7 +18,13 @@ let setting = {
   assetName: 'webpack.assets.json',
   alias: {
     common: path.join(rootPath, 'src/common'),
-  }
+  },
+  copyLibs: [
+    'validator/', 
+    'swiper/dist',
+    'jquery/dist',
+    'jquery-validation/dist',
+  ],
 };
 
 module.exports = setting;

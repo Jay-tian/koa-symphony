@@ -11,6 +11,11 @@
     "controller": "User",
     "methods": ["get", "post"]
   },
+  "register": {
+    "path": "/register",
+    "controller": "User",
+    "methods": ["post"]
+  },
   "logout": {
     "path": "/logout",
     "controller": "User"

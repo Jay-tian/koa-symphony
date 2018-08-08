@@ -12,6 +12,7 @@
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
     "jay-webpack-scaffold": "^1.1.10",
+    "jquery-validation": "^1.17.0",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
