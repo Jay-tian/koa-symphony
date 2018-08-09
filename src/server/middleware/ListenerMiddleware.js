@@ -13,7 +13,7 @@ let middleware =  async (ctx, next) => {
   }
 
   ctx.ip = ctx.ip.replace('::ffff:', '');
-  
+
   await next();
 };
 

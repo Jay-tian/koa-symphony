@@ -7,7 +7,7 @@ class UserService extends BaseService{
     super();
   }
 
-  reigster(fields) {
+  async reigster(fields) {
     let salt =  crypto.randomBytes(16).toString('hex');
     let Signture = crypto.createHmac('sha1', salt);//定义加密方式
     let password = Signture.update(fields.password).digest().toString('base64');
@@ -22,11 +22,15 @@ class UserService extends BaseService{
       registerTime: toolkit.timestamp(),
     }; 
 
-    return this.getCurrentDao().create(user);
+    return await this.getCurrentDao().create(user);
   }
 
   getCurrentDao() {
-    return this.createDao('User/UserDao');
+    return this.createDao('user/UserDao');
+  }
+
+  getSessionDao() {
+    return this.createDao('system/SessionDao');
   }
 }
 

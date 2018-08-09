@@ -29,7 +29,7 @@ class Store {
       let data = result.get('data');
       data = JSON.stringify(Object.assign(data, opts.data));
       
-      return this.sessionDao.update(session, {data: data});
+      return this.sessionDao.updateBySessId(session, {data: data});
     }
 
     let data = {
@@ -45,7 +45,6 @@ class Store {
   }
 
   async destroy(sid) {
-    return this.sessionDao.deleteBySessId(sid);
   }
 }
 

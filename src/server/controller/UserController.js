@@ -1,5 +1,6 @@
 const BaseController = require('./BaseController');
 const crypto = require('crypto');
+const toolkit = require('../../common/tookit.js');
 
 class UserController extends BaseController {
   constructor(){
@@ -20,8 +21,14 @@ class UserController extends BaseController {
     return async (ctx, next) => {
       let body = ctx.request.body;
       body.registerIp = ctx.ip;
-      let user = this.getUserService().reigster(ctx.request.body);
-      return ctx.render('login/index.twig');
+      let user = await this.getUserService().reigster(ctx.request.body);
+
+      ctx.session.data = {
+        userId: user.dataValues['id'],
+        deadline: toolkit.timestamp() + 24*60*60*30,
+      };
+
+      ctx.redirect('back', '/');
     };
   }
 

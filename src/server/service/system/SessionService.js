@@ -4,8 +4,16 @@ class SessionService extends BaseService{
     super();
   }
 
-  deleteBySessId(sessId) {
-    return this.getCurrentDao().deleteBySessId(sessId);
+  updateDeadline(id, deadline) {
+    return this.getCurrentDao().update(id, {deadline: deadline});
+  }
+
+  update(id, fields) {
+    return this.getCurrentDao().update(id, fields);
+  }
+
+  deleteById(id) {
+    return this.getCurrentDao().deleteById(id);
   }
 
   getCurrentDao() {

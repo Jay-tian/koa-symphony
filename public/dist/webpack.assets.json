@@ -20,13 +20,13 @@
   "": {
     "js": [
       "/dist/js/libs/jquery/dist/jquery.min.js",
-      "/dist/js/libs/jquery/dist/core.js",
       "/dist/js/libs/jquery/dist/jquery.js",
+      "/dist/js/libs/jquery/dist/core.js",
       "/dist/js/libs/jquery/dist/jquery.slim.js",
       "/dist/js/libs/jquery/dist/jquery.slim.min.js",
+      "/dist/js/libs/swiper/dist/js/swiper.js",
       "/dist/js/libs/swiper/dist/js/swiper.esm.bundle.js",
       "/dist/js/libs/swiper/dist/js/swiper.esm.js",
-      "/dist/js/libs/swiper/dist/js/swiper.js",
       "/dist/js/libs/swiper/dist/js/swiper.min.js"
     ],
     "": [
