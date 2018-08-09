@@ -23,31 +23,14 @@
 <body class="{{ bodyClass|default('') }}">
 {% block body %}
   {% block header %}
-    <header class="header clearfix">
-      <div class="cd-md-6">
-        <h1>
-          <span class="red">E</span><span class="yellow">a</span><span class="green">s</span><span class="blue">y</span>
-        </h1>
-        <ul>
-          <li><a href="/">首页</a></li>
-        </ul>
-      </div>
-      <div class="cd-md-6">
-      </div>
-    </header>
+    {% include '/common/system/head.twig' %}
   {% endblock %}
 
   {% block main %}
   {% endblock %} 
 
   {% block bottom %}
-    <footer class="footer">
-      <div class="copyright text-center">
-        Copyright © 2011-2018 easy 版本 1.0.0<br>
-        <a href="" class="cd-link-assist" rel="nofollow">浙ICP备 xxxx</a> &nbsp;
-        <a target="_blank" href="" class="cd-link-assist" rel="nofollow">浙公网安备 xxxxxxx号</a>
-      </div>
-    </footer>
+    {% include '/common/system/foot.twig' %}
   {% endblock %}
   <div id="login-modal" class="modal" data-url=""></div>
   <div id="modal" class="modal"></div>
