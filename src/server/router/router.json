@@ -19,5 +19,10 @@
   "logout": {
     "path": "/logout",
     "controller": "User"
+  },
+  "createArticle": {
+    "path": "/article/create",
+    "controller": "Article",
+    "methods": ["get", "post"]
   }
 }
