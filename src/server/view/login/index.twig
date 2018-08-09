@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 
 {% set title = "登录" %}
-{% set scripts = ['/dist/js/libs/jquery-validation/dist/jquery.validate.min.js', '/dist/js/login/index.js',] %} 
+{% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/login/index.js',] %} 
 {% set styles = ['/dist/css/login.css'] %} 
 
 {% block body %}
@@ -40,7 +40,7 @@
           登录
         </span>
       </div>
-      <form action="{{ url('register') }}" method="post" class="form-horizontal">
+      <form action="{{ url('register') }}" id="register" method="post" class="form-horizontal">
         <div class="control-group">
           <div class="controls">
             <input placeholder="用户名" class="form-control" name="username" type="text">

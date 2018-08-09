@@ -24,13 +24,6 @@ class Store {
   }
 
   async set(session, opts = {}) {
-    // var content = 'admin';
-    // var salt =  crypto.randomBytes(16).toString('hex');
-    // var Signture = crypto.createHmac('sha1', salt);//定义加密方式
-    // var password = Signture.update(content).digest().toString('base64');
-    // console.log("加密的结果：" + password);
-    // console.log("salt12: " + salt);
-
     let result = await this.sessionDao.getBySessId(session);
     if (result) {
       let data = result.get('data');

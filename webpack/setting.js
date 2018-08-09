@@ -19,11 +19,10 @@ let setting = {
   alias: {
     common: path.join(rootPath, 'src/common'),
   },
+  libs: rootPath + '/src/client/js/libs/',
   copyLibs: [
-    'validator/', 
     'swiper/dist',
     'jquery/dist',
-    'jquery-validation/dist',
   ],
 };
 

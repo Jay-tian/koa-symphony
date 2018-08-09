@@ -6,9 +6,6 @@ class UserDao extends BaseDao{
     super('user');
   }
 
-  create() {
-  }
-
   config() {
     return {
       email: {type:Sequelize.STRING(128),  unique: true },
@@ -29,6 +26,7 @@ class UserDao extends BaseDao{
       loginTime: {type: Sequelize.INTEGER,  defaultValue: 0},
       loginIp: {type:Sequelize.STRING(64),  allowNull: false, defaultValue: ''},
       registerIp: { type:Sequelize.STRING(64),  allowNull: false},
+      registerTime: {type: Sequelize.INTEGER,  defaultValue: 0,}
     };
   }
 }

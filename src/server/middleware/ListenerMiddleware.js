@@ -4,7 +4,7 @@ let middleware =  async (ctx, next) => {
     ctx.redirect('back', '/');
   }
 
-  if (0 == ctx.request.url.indexOf('/login') && ctx.state.user.isLogin()) {
+  if ((0 == ctx.request.url.indexOf('/login') || 0 == ctx.request.url.indexOf('/reigster')) && ctx.state.user.isLogin()) {
     ctx.redirect('back', '/');
   }
 
@@ -12,6 +12,8 @@ let middleware =  async (ctx, next) => {
     ctx.redirect('back', '/');
   }
 
+  ctx.ip = ctx.ip.replace('::ffff:', '');
+  
   await next();
 };
 

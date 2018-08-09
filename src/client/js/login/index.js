@@ -8,9 +8,12 @@ $('.js-trans').on('click',function(){
 });
 
 
-$('#login').validate({
+$('#register').validate({
   rules: {
     username: {
+      required: true,
+    },
+    password: {
       required: true,
     }
   }

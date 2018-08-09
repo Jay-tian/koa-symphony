@@ -18,6 +18,9 @@ class UserController extends BaseController {
 
   register() {
     return async (ctx, next) => {
+      let body = ctx.request.body;
+      body.registerIp = ctx.ip;
+      let user = this.getUserService().reigster(ctx.request.body);
       return ctx.render('login/index.twig');
     };
   }
