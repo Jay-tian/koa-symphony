@@ -13,7 +13,6 @@ module.exports = class BaseService{
   }
 
   getById(id) {
-    console.log(id);
     return this.getCurrentDao().getById(id);
   }
 

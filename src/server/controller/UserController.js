@@ -13,15 +13,15 @@ class UserController extends BaseController {
         let body = ctx.request.body;
         let user = await this.getUserService().login(body);
         if (user) {
-          // ctx.session.data = {
-          //   userId: user.get('id')
-          // };
+          ctx.session.data = {
+            userId: user.get('id')
+          };
 
-          ctx.redirect('back', '/article/create');
+          ctx.redirect('/');
         }
+      } else {
+        return ctx.render('login/index.twig');
       }
-
-      return ctx.render('login/index.twig');
     };
   }
 
