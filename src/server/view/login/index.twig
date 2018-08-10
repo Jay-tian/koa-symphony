@@ -16,10 +16,10 @@
           注册
         </span>
       </div>
-      <form method="post" class="form-horizontal" id="login">
+      <form action="{{ url('login') }}" method="post" class="form-horizontal" id="login">
         <div class="control-group">
           <div class="controls">
-            <input placeholder="用户名" class="form-control" name="username" type="text">
+            <input placeholder="用户名" class="form-control" name="nickname" type="text">
           </div>
         </div>
         <div class="control-group mt2">
@@ -43,7 +43,7 @@
       <form action="{{ url('register') }}" id="register" method="post" class="form-horizontal">
         <div class="control-group">
           <div class="controls">
-            <input placeholder="用户名" class="form-control" name="username" type="text">
+            <input placeholder="用户名" class="form-control" name="nickname" type="text">
           </div>
         </div>
         <div class="control-group mt2">

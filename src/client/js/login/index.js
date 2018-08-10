@@ -10,7 +10,7 @@ $('.js-trans').on('click',function(){
 
 $('#register').validate({
   rules: {
-    username: {
+    nickname: {
       required: true,
     },
     password: {

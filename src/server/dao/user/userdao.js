@@ -6,6 +6,10 @@ class UserDao extends BaseDao{
     super('user');
   }
 
+  getByNickname(nickname) {
+    return this.model.findOne({where : {nickname: nickname}});
+  }
+
   config() {
     return {
       email: {type:Sequelize.STRING(128),  unique: true },

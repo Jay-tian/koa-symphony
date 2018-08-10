@@ -18,17 +18,6 @@
     "js": "/dist/js/login/index.js"
   },
   "": {
-    "js": [
-      "/dist/js/libs/jquery/dist/jquery.min.js",
-      "/dist/js/libs/jquery/dist/core.js",
-      "/dist/js/libs/jquery/dist/jquery.js",
-      "/dist/js/libs/jquery/dist/jquery.slim.js",
-      "/dist/js/libs/jquery/dist/jquery.slim.min.js",
-      "/dist/js/libs/swiper/dist/js/swiper.esm.bundle.js",
-      "/dist/js/libs/swiper/dist/js/swiper.esm.js",
-      "/dist/js/libs/swiper/dist/js/swiper.js",
-      "/dist/js/libs/swiper/dist/js/swiper.min.js"
-    ],
     "": [
       "/dist/iconfont/f476",
       "/dist/iconfont/e18b",
@@ -36,6 +25,17 @@
       "/dist/iconfont/448c",
       "/dist/iconfont/8988",
       "/dist/js/libs/swiper/dist/.DS_Store"
+    ],
+    "js": [
+      "/dist/js/libs/jquery/dist/core.js",
+      "/dist/js/libs/jquery/dist/jquery.min.js",
+      "/dist/js/libs/jquery/dist/jquery.js",
+      "/dist/js/libs/jquery/dist/jquery.slim.min.js",
+      "/dist/js/libs/jquery/dist/jquery.slim.js",
+      "/dist/js/libs/swiper/dist/js/swiper.esm.bundle.js",
+      "/dist/js/libs/swiper/dist/js/swiper.esm.js",
+      "/dist/js/libs/swiper/dist/js/swiper.min.js",
+      "/dist/js/libs/swiper/dist/js/swiper.js"
     ],
     "css": [
       "/dist/js/libs/swiper/dist/css/swiper.css",

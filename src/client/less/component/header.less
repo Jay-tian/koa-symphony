@@ -1,7 +1,13 @@
 .header{
-  padding: 1rem 2rem;
+  padding: 0 30px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+
   h1{
     float: left;
+    margin: 0 0 5px;
+
     .red{
       color: #ea4236
     }
@@ -11,17 +17,33 @@
     .blue{
       color: #4285f6
     }
-    .green{
-      color: #33a855
-    }
   }
   ul{
     float: left;
-    line-height: 2rem;
-    margin-left: 2rem;
+    margin-left: 30px;
+    margin-bottom: 0;
     list-style: none;
+    line-height: 50px;
+    
     li{
       float: left;
+    }
+  }
+
+  .profile {
+    text-align: center;
+    line-height: 50px;
+    margin-top: 5px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: #fff;
+    float: right;
+    background: @primary-color;
+
+    &.login {
+      font-size: 16px;
     }
   }
 }

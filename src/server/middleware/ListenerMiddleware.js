@@ -1,5 +1,7 @@
 
 let middleware =  async (ctx, next) => {
+ console.log(ctx.request.url);
+ console.log(12341234);
   if (0 == ctx.request.url.indexOf('/admin') && !ctx.state.user.isAdmin()) {
     ctx.redirect('back', '/');
   }

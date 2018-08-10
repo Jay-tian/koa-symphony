@@ -11,6 +11,14 @@ class UserController extends BaseController {
     return async (ctx, next) => {
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
+        let user = await this.getUserService().login(body);
+        if (user) {
+          // ctx.session.data = {
+          //   userId: user.get('id')
+          // };
+
+          ctx.redirect('back', '/article/create');
+        }
       }
 
       return ctx.render('login/index.twig');
@@ -34,8 +42,8 @@ class UserController extends BaseController {
 
   logout() {
     return async (ctx, next) => {
-      this.sessionService().deleteBySessId(ctx.session.sessId);
-      return ctx.render('login/index.twig');
+      this.sessionService().deleteById(ctx.session.id);
+      ctx.redirect('back', '/');
     };
   }
 
