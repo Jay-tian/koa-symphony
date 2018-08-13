@@ -10,7 +10,8 @@ class SystemController extends BaseController {
 
   imageUpload() {
     return async (ctx, next) => {
-      ctx.body = {s: 'asd'}
+      console.log(ctx.request.files);
+      ctx.body = {message: '上传成功', success: 1, url: '/data/upload_980a380eca4a0f49616d6ec72896a305.png'};
       next();
     };      
   }
