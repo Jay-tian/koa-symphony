@@ -15,6 +15,9 @@ class SystemController extends BaseController {
 
       const tmpdir = os.tmpdir();
       const filePaths = [];
+     
+      console.log(ctx.request.body);
+      console.log(123123);
       const files = ctx.request.body.files || {};
       for (let key in files) {
         const file = files[key];

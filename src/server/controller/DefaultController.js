@@ -1,4 +1,5 @@
 const BaseController = require('./BaseController');
+const os = require('os');
 
 class DefaultController extends BaseController {
   constructor(){
@@ -7,6 +8,7 @@ class DefaultController extends BaseController {
 
   index() {
     return async (ctx) => {
+      console.log(os.tmpDir());
       return ctx.render('index/index.twig', {
         user: ctx.state.user
       });
