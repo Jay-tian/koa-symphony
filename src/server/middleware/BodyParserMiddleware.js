@@ -1,6 +1,6 @@
-const bodyParser = require('koa-bodyparser');
+const koaBody = require('koa-body');
 
 module.exports = {
   priority: 40,
-  middleware: bodyParser(),
+  middleware: koaBody({ multipart: true }),
 };

@@ -10,6 +10,7 @@ module.exports = {
       "Swiper": true,
       "particlesJS": true,
       "__dirname": true,
+      "editormd": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

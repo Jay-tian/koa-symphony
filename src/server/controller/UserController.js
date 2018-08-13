@@ -19,9 +19,9 @@ class UserController extends BaseController {
 
           ctx.redirect('/');
         }
-      } else {
-        return ctx.render('login/index.twig');
-      }
+      } 
+
+      return ctx.render('login/index.twig');
     };
   }
 

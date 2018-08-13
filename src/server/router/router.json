@@ -24,5 +24,10 @@
     "path": "/article/create",
     "controller": "Article",
     "methods": ["get", "post"]
+  },
+  "imageUpload": {
+    "path": "/image/uploader",
+    "controller": "System",
+    "methods": ["post"]
   }
 }

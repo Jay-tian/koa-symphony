@@ -1,23 +1,25 @@
 {% extends 'layout.twig' %}
-{# {% do css(['libs/editor.md/css/editormd.min.css', 'dist/article/create/index.css']) %}
-{% do script(['libs/editor.md/editormd.min.js', 'dist/article/create/index.js']) %} #}
+{% set scripts = ['/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
+{% set styles = ['/dist/js/libs/editor.md/css/editormd.min.css', '/dist/css/article-create.css'] %}
+
 {% block title %}
   create a blog
 {% endblock %}
 
 {% block main %}
-    <div class="article-create">
-      <form action="{{ path('article_create') }}" id="article">
-          <div class="form-group">
-              <input name="title" id="title" class="title" placeholder="标题" value="">
-          </div>
-          <div id="content">
-              <textarea class="editormd" name="content_md" style="display:none;"></textarea>
-          </div>
-          <input name="id" type="hidden" id="article-id" value="">
-          <button type="submit" >
-              提交
-          </button>
-      </form>
-    </div>
+  <div class="article-create container" id="article-create">
+    <form action="{{ url('createArticle') }}" id="article" data-image-save="{{ url('imageUpload') }}">
+        <div class="form-group">
+          <input name="title" id="title" class="title form-control" autocomplete="off" placeholder="标题" value="">
+        </div>
+
+        <div id="content">
+            <textarea class="editormd" name="content_md" style="display:none;"></textarea>
+        </div>
+        <input name="id" type="hidden" id="article-id" value="">
+        <button type="submit" >
+            提交
+        </button>
+    </form>
+  </div>
 {% endblock %}

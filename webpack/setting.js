@@ -23,6 +23,7 @@ let setting = {
   copyLibs: [
     'swiper/dist',
     'jquery/dist',
+    'editor.md/',
   ],
 };
 
