@@ -1,6 +1,6 @@
 const koaBody = require('koa-body');
 
 module.exports = {
-  priority: 40,
+  priority: 10,
   middleware: koaBody({ multipart: true }),
 };

@@ -9,24 +9,25 @@ class SystemController extends BaseController {
   }
 
   imageUpload() {
-    return async (ctx) => {
-      return async function(ctx) {
-        const tmpdir = os.tmpdir();
-        const filePaths = [];
-        const files = ctx.request.body.files || {};
-      
-        for (let key in files) {
-          const file = files[key];
-          const filePath = path.join(tmpdir, file.name);
-          const reader = fs.createReadStream(file.path);
-          const writer = fs.createWriteStream(filePath);
-          reader.pipe(writer);
-          filePaths.push(filePath);
-        }
-      
-        ctx.body = filePaths;
-      };      
-    };
+    return async (ctx, next) => {
+      let body = ctx.request.body;
+      console.log(ctx.request.query);
+
+      const tmpdir = os.tmpdir();
+      const filePaths = [];
+      const files = ctx.request.body.files || {};
+      for (let key in files) {
+        const file = files[key];
+        const filePath = path.join(tmpdir, file.name);
+        const reader = fs.createReadStream(file.path);
+        const writer = fs.createWriteStream(filePath);
+        reader.pipe(writer);
+        filePaths.push(filePath);
+      }
+    
+      ctx.body = {path: 'lalalalal'};
+      next();
+    };      
   }
 }
 
