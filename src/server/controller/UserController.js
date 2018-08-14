@@ -1,6 +1,6 @@
 const BaseController = require('./BaseController');
 const crypto = require('crypto');
-const toolkit = require('../../common/tookit.js');
+const toolkit = require('../../common/toolkit.js');
 
 class UserController extends BaseController {
   constructor(){

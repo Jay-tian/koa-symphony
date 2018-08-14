@@ -1,4 +1,5 @@
 const xxtea = require('./xxtea.js');
+const fs = require('fs');
 
 exports.arrayIndex = function(data, column){
   let newData = [];
@@ -10,6 +11,10 @@ exports.arrayIndex = function(data, column){
   });
 
   return newData;
+};
+
+exports.getYMD = function() {
+  return new Date().toLocaleDateString();
 };
 
 exports.timestamp = function(){
@@ -36,5 +41,11 @@ exports.requires = function(data, keys){
 
 exports.unique = function(data) {
   return Array.from(new Set(data));
+};
+
+exports.checkDirExist = function(p){
+  if (!fs.existsSync(p)) {
+    fs.mkdirSync(p);
+  }
 };
 
