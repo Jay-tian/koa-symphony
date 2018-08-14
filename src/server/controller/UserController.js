@@ -18,6 +18,7 @@ class UserController extends BaseController {
           };
 
           ctx.redirect('/');
+          return;
         }
       } 
 
@@ -37,6 +38,7 @@ class UserController extends BaseController {
       };
 
       ctx.redirect('back', '/');
+      return;
     };
   }
 
@@ -44,6 +46,7 @@ class UserController extends BaseController {
     return async (ctx, next) => {
       this.sessionService().deleteById(ctx.session.id);
       ctx.redirect('back', '/');
+      return;
     };
   }
 
