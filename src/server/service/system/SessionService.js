@@ -13,7 +13,7 @@ class SessionService extends BaseService{
   }
 
   deleteById(id) {
-    return this.getCurrentDao().deleteById(id);
+    return this.getCurrentDao().delete(id);
   }
 
   getCurrentDao() {

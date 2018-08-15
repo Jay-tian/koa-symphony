@@ -7,6 +7,10 @@ module.exports = class BaseDao{
     this.table = table;
     this.createModel();
   }
+  
+  update(id, fields) {
+    return this.model.update(fields, {where: {id: id}});
+  }
 
   getById(id) {
     return this.model.findById(id);
@@ -19,7 +23,7 @@ module.exports = class BaseDao{
   delete(id) {
     return this.model.destroy({'where':{'id':id}});
   }
-  
+
   count() {
     
   }

@@ -1,5 +1,5 @@
 {% extends 'layout.twig' %}
-{% set scripts = ['/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
+{% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
 {% set styles = ['/dist/js/libs/editor.md/css/editormd.min.css', '/dist/css/article-create.css'] %}
 
 {% block title %}
@@ -12,9 +12,10 @@
         <div class="form-group">
           <input name="title" id="title" class="title form-control" autocomplete="off" placeholder="标题" value="">
         </div>
-
-        <div id="content">
-            <textarea class="editormd" name="content_md" style="display:none;"></textarea>
+        <div class="form-group">
+          <div id="content">
+              <textarea class="editormd" name="contentMd" style="display:none;"></textarea>
+          </div>
         </div>
         <input name="id" type="hidden" id="article-id" value="">
         <button type="submit" >

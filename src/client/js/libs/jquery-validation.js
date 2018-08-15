@@ -7,6 +7,9 @@ $.validator.setDefaults({
   ignore: '',
   ajax: false,
   currentDom: null,
+  errorPlacement: function(error, element) {
+    element.closest('.form-group').append(error);
+  },
 });
 
 $.extend($.validator.messages, {

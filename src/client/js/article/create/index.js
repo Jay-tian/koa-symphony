@@ -6,9 +6,8 @@ editormd({
   width: '100%',
   imageUpload: true,
   saveHTMLToTextarea: true,
-  imageUploadURL: $article.data('imageSave')
+  imageUploadURL: $article.data('imageSave'),
 });
-
 
 // let article = new Article($form);
 
@@ -19,34 +18,34 @@ editormd({
 //   }
 // };
 
-// $article.validate({
-//   invalidHandler: function(data, validate) {
-//     let errorTip = validate.errorMap[Object.keys(validate.errorMap)[0]];
-//     if (errorTip) {
-//       $.alert.show(errorTip, 'danger');
-//     }
-//   },
-//   submitHandler: function() {
-//     article.save();
-//   },
-//   rules: {
-//     content_md: {
-//       required: true,
-//     },
-//     title: {
-//       required: true,
-//       minlength: 6,
-//       maxlength: 20,
-//     },
-//   },
-//   messages: {
-//     content_md: {
-//       required: '请输入正文内容',
-//     },
-//     title: {
-//       required: '请输入标题',
-//       minlength: '标题不能小于6个字符',
-//       maxlength: '标题不能大于20个字符',
-//     },
-//   }
-// });
+$article.validate({
+  invalidHandler: function(data, validate) {
+    let errorTip = validate.errorMap[Object.keys(validate.errorMap)[0]];
+    if (errorTip) {
+      //alert(errorTip);
+    }
+  },
+  submitHandler: function() {
+    //article.save();
+  },
+  rules: {
+    contentMd: {
+      required: true,
+    },
+    title: {
+      required: true,
+      minlength: 10,
+      maxlength: 25,
+    },
+  },
+  messages: {
+    contentMd: {
+      required: '请输入正文内容',
+    },
+    title: {
+      required: '请输入标题',
+      minlength: '标题不能小于6个字符',
+      maxlength: '标题不能大于20个字符',
+    },
+  }
+});

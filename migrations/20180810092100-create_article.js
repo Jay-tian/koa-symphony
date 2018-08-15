@@ -13,6 +13,7 @@ module.exports = {
         likeNum int(11) not null default '0' COMMENT '被赞数',
         hits int(11) not null default 0 COMMENT '浏览量',
         content text not null COMMENT '内容',
+        contentMd text not null COMMENT '内容md',
         recommend int(11) not null default 0 COMMENT '是否推荐',
         seq int(11) not null default 0 COMMENT '推荐权重',
         publishedTime int(10) UNSIGNED NOT NULL,

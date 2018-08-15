@@ -1,19 +1,11 @@
 const BaseDao = require('../BaseDao.js');
 const Sequelize = require('sequelize');
 
-class SessionDao extends BaseDao{
+class ArticleDao extends BaseDao{
   constructor(){
-    super('session');
+    super('article');
   }
-
-  updateBySessId(sessId, fields) {
-    return this.model.update(fields, {where: {sessId: sessId}});
-  }
-
-  getBySessId(sessId) {
-    return this.model.findOne({where : {sessId: sessId}});
-  }
-
+  
   config() {
     return {
       sessId: {
@@ -39,4 +31,4 @@ class SessionDao extends BaseDao{
   }
 }
 
-module.exports = new SessionDao();
+module.exports = new ArticleDao();
