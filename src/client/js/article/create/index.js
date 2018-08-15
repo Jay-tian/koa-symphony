@@ -22,11 +22,8 @@ $article.validate({
   invalidHandler: function(data, validate) {
     let errorTip = validate.errorMap[Object.keys(validate.errorMap)[0]];
     if (errorTip) {
-      //alert(errorTip);
+      alert(errorTip);
     }
-  },
-  submitHandler: function() {
-    //article.save();
   },
   rules: {
     contentMd: {
@@ -44,8 +41,8 @@ $article.validate({
     },
     title: {
       required: '请输入标题',
-      minlength: '标题不能小于6个字符',
-      maxlength: '标题不能大于20个字符',
+      minlength: '标题不能小于10个字符',
+      maxlength: '标题不能大于25个字符',
     },
   }
 });

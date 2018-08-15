@@ -15,6 +15,14 @@ module.exports = class {
     return this.user.get('roles').indexOf('admin') >= 0 ? true : false ;
   }
 
+  getUserId() {
+    if (!this.user) {
+      return 0;
+    }
+
+    this.user.get('id');
+  }
+
   get(key) {
     if (!this.user) {
       return '';

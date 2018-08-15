@@ -8,25 +8,39 @@ class ArticleDao extends BaseDao{
   
   config() {
     return {
-      sessId: {
-        type:Sequelize.STRING(128),
-        unique: true,
-        get: function(name) {
-          let sessId = this.getDataValue(name);
-          return sessId ? this.getDataValue(name).toString() : '';
-        }
+      title: {
+        type: Sequelize.STRING(128),
       },
-      data: {
-        type:Sequelize.BLOB,
-        get: function(name) {
-          let data = this.getDataValue(name);
-          return data ? JSON.parse(data.toString()) : {};
-        }
+      categoryId: {
+        type: Sequelize.INTEGER,
       },
-      deadline: {
-        type:Sequelize.INTEGER,
-        allowNull: false,
+      status: {
+        type: Sequelize.STRING(64),
       },
+      cover: {
+        type: Sequelize.STRING(1024),
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+      },
+      likeNum: {
+        type: Sequelize.INTEGER,
+      },
+      hits: {
+        type: Sequelize.INTEGER,
+      },
+      content: {
+        type: Sequelize.TEXT,
+      },
+      contentMd: {
+        type: Sequelize.TEXT,
+      },
+      seq: {
+        type: Sequelize.INTEGER,
+      },
+      publishedTime: {
+        type: Sequelize.INTEGER,
+      }
     };
   }
 }
