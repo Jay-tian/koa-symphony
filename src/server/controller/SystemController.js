@@ -10,12 +10,21 @@ class SystemController extends BaseController {
 
   imageUpload() {
     return async (ctx, next) => {
-      
+      let subKey = 'public';
+      let files = ctx.request.files;
+      let url = '';
+
+      for (let value in files) {
+        let index =  files[value].path.indexOf(subKey) + subKey.length;
+        url =  files[value].path.substring(index);
+      }
+
       ctx.body = {
         message: '上传成功', 
         success: 1, 
-        url: '/data/upload_980a380eca4a0f49616d6ec72896a305.png'
+        url: url,
       };
+      
       return;
     };      
   }

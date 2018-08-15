@@ -15,7 +15,7 @@ module.exports = {
       onFileBegin:(name, file) => {
         let ext = file.name.split('.');
         ext = ext[ext.length - 1];
-        let filePath = ['jpg', 'png', 'gif', 'jpeg'].indexOf(ext) > 0 ? 'images' : 'files';
+        let filePath = ['jpg', 'png', 'gif', 'jpeg'].indexOf(ext) >= 0 ? 'images' : 'files';
 
         filePath += '/'+toolkit.getYMD();
         filePath = path.join(parameters.rootPath, 'public/data/'+filePath);
