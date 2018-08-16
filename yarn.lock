@@ -583,16 +583,6 @@ assertion-error@^1.0.1:
   version "1.1.0"
   resolved "https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
 
-assets-webpack-plugin@^3.7.1:
-  version "3.8.4"
-  resolved "https://registry.npmjs.org/assets-webpack-plugin/-/assets-webpack-plugin-3.8.4.tgz#4b96a69850563ab36b54206741ef372901569597"
-  dependencies:
-    camelcase "^5.0.0"
-    escape-string-regexp "^1.0.3"
-    lodash.assign "^4.2.0"
-    lodash.merge "^4.6.1"
-    mkdirp "^0.5.1"
-
 assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
@@ -2531,15 +2521,6 @@ co-body@^5.1.1:
     raw-body "^2.2.0"
     type-is "^1.6.14"
 
-co-body@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/co-body/-/co-body-6.0.0.tgz#965b9337d7f5655480787471f4237664820827e3"
-  dependencies:
-    inflation "^2.0.0"
-    qs "^6.5.2"
-    raw-body "^2.3.3"
-    type-is "^1.6.16"
-
 co@3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/co/-/co-3.1.0.tgz#4ea54ea5a08938153185e15210c68d9092bc1b78"
@@ -2833,10 +2814,6 @@ copy-concurrently@^1.0.0:
 copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
-
-copy-to@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/copy-to/-/copy-to-2.0.1.tgz#2680fbb8068a48d08656b6098092bdafc906f4a5"
 
 copy-webpack-plugin@^4.5.1:
   version "4.5.1"
@@ -6336,6 +6313,16 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+jay-assets-webpack-plugin@^3.7.1:
+  version "3.9.5"
+  resolved "https://registry.npmjs.org/jay-assets-webpack-plugin/-/jay-assets-webpack-plugin-3.9.5.tgz#9444100c24f793b60c5c29c1140d3dd4aa87299e"
+  dependencies:
+    camelcase "^5.0.0"
+    escape-string-regexp "^1.0.3"
+    lodash.assign "^4.2.0"
+    lodash.merge "^4.6.1"
+    mkdirp "^0.5.1"
+
 jay-fullpage.js@^2.9.7:
   version "2.9.7"
   resolved "https://registry.npmjs.org/jay-fullpage.js/-/jay-fullpage.js-2.9.7.tgz#604ddd7a1347f58ad022da1386c16a05be93bbad"
@@ -6350,11 +6337,10 @@ jay-respond@^1.4.3:
   version "1.4.3"
   resolved "https://registry.npmjs.org/jay-respond/-/jay-respond-1.4.3.tgz#b2052b3d391dc90f0c50a6ad7fbb4a87a0fe8a3d"
 
-jay-webpack-scaffold@^1.1.10:
-  version "1.1.13"
-  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.13.tgz#8bd6afa896383732702cb6f46553c6a17c0d5c6e"
+jay-webpack-scaffold@1.1.16:
+  version "1.1.16"
+  resolved "https://registry.npmjs.org/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.16.tgz#84b7e5135cba8e6a7081cfc6c1cda2970b7fceb5"
   dependencies:
-    assets-webpack-plugin "^3.7.1"
     autoprefixer "^7.2.5"
     babel-cli "^6.26.0"
     babel-core "^6.26.0"
@@ -6384,6 +6370,7 @@ jay-webpack-scaffold@^1.1.10:
     happypack "^5.0.0"
     html5shiv "^3.7.3"
     imagemin-webpack-plugin "^2.1.5"
+    jay-assets-webpack-plugin "^3.7.1"
     jay-remove-webpack-plugin "^1.0.0"
     jay-respond "^1.4.3"
     jquery "^3.3.1"
@@ -6691,13 +6678,6 @@ koa-body@^4.0.4:
     "@types/formidable" "^1.0.31"
     co-body "^5.1.1"
     formidable "^1.1.1"
-
-koa-bodyparser@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.npmjs.org/koa-bodyparser/-/koa-bodyparser-4.2.1.tgz#4d7dacb5e6db1106649b595d9e5ccb158b6f3b29"
-  dependencies:
-    co-body "^6.0.0"
-    copy-to "^2.0.1"
 
 koa-compose@^3.0.0:
   version "3.2.1"
@@ -9691,7 +9671,7 @@ qs@6.5.1:
   version "6.5.1"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
 
-qs@^6.4.0, qs@^6.5.2, qs@~6.5.1:
+qs@^6.4.0, qs@~6.5.1:
   version "6.5.2"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
@@ -9782,7 +9762,7 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
-raw-body@^2.2.0, raw-body@^2.3.3:
+raw-body@^2.2.0:
   version "2.3.3"
   resolved "https://registry.npmjs.org/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"
   dependencies:
@@ -12000,7 +11980,7 @@ type-detect@^4.0.0:
   version "4.0.8"
   resolved "https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
 
-type-is@^1.5.5, type-is@^1.6.14, type-is@^1.6.16, type-is@~1.6.15, type-is@~1.6.16:
+type-is@^1.5.5, type-is@^1.6.14, type-is@~1.6.15, type-is@~1.6.16:
   version "1.6.16"
   resolved "https://registry.npmjs.org/type-is/-/type-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
   dependencies:

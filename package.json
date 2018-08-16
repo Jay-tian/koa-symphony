@@ -12,7 +12,7 @@
     "forever": "^0.15.3",
     "install": "^0.11.0",
     "jay-fullpage.js": "^2.9.7",
-    "jay-webpack-scaffold": "^1.1.10",
+    "jay-webpack-scaffold": "1.1.16",
     "jquery-validation": "^1.17.0",
     "koa": "^2.5.0",
     "koa-body": "^4.0.4",
