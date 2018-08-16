@@ -49,8 +49,7 @@ class UserController extends BaseController {
     };
   }
 
-  sessionService()
-  {
+  sessionService() {
     return this.createService('system/SessionService');
   }
 }

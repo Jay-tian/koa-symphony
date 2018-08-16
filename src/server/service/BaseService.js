@@ -9,7 +9,8 @@ module.exports = class BaseService{
   count() {
   }
 
-  search() {
+  search(condition, order, start, limit) {
+    return this.getCurrentDao().search(condition, order, start, limit);
   }
 
   getById(id) {

@@ -1,5 +1,5 @@
 const BaseController = require('./BaseController');
-const os = require('os');
+const toolkit = require('../../common/toolkit.js');
 
 class DefaultController extends BaseController {
   constructor(){
@@ -8,11 +8,17 @@ class DefaultController extends BaseController {
 
   index() {
     return async (ctx) => {
-      console.log(os.tmpDir());
+      let articles = await this.articleService().search({}, [], 0, 10);
+      console.log(toolkit.getSizeOfObject(articles));
       return ctx.render('index/index.twig', {
-        user: ctx.state.user
+        user: ctx.state.user,
+        articles: articles,
       });
     };
+  }
+
+  articleService() {
+    return this.createService('Article/ArticleService');
   }
 }
 

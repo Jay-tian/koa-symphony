@@ -28,8 +28,13 @@ module.exports = class BaseDao{
     
   }
 
-  search() {
-    return;
+  search(condition, order, start, limit) {
+    return this.model.findAll({
+      where: condition,
+      order: order,
+      offset: start,
+      limit: limit
+    });
   }
 
   get() {

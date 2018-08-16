@@ -1,13 +1,35 @@
 {% extends 'layout.twig' %}
-{% set lang = 'en' %}
-{% set title = "furrytail" %}
-{% set description = "Furlosophy is the new philosophy." %}
-{% set keywords = "furrytail 白白猫窝" %}
 {% set scripts = ['/dist/js/index/index.js'] %}
+{% set styles = ['/dist/css/index.css'] %} 
 
 {% block main %}
   <div class="main clearfix container">
     <div class="col-md-9">
+      <ul class="article-list">
+        {% for article in articles %}
+          <li class="">
+            <div class="content">
+              <a class="title" target="_blank" href="">
+                {{ article.dataValues.title }}
+              </a>
+              {# <p class="abstract">
+              </p> #}
+              <div class="meta">
+                <a class="nickname" target="_blank" href="">
+                  
+                </a>
+                  <a target="_blank" href="/p/cd7f429f4278#comments">
+                    <i class="iconfont ic-list-comments"></i> 0
+                  </a>      
+                <span>
+                  <i class="iconfont ic-list-like"></i> 0
+                </span>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
       <div class="article-list">
         {% for article in articles %}
           <div class="item">
@@ -27,12 +49,11 @@
       </div>        
     </div>
     <div class="col-md-3">
-      {# <div class="card">
-        <div class="cd-card-image">
-          <img class="cd-full" src="image/joker.jpg" alt=""/>
-        </div>
-        <div class="cd-card-body">敏捷估算扑克</div>
-      </div> #}
+      <ul class="apps">
+        <li>
+          算法扑克
+        </li>
+      </ul>
     </div>
   </div>
 {% endblock %} 
