@@ -7,7 +7,6 @@ module.exports = {
   priority: 0,
   middleware: koaBody({
     multipart: true, // 支持文件上传
-    encoding:'gzip',
     formidable:{
       keepExtensions: true,    // 保持文件的后缀
       maxFieldsSize:2 * 1024 * 1024, // 文件上传大小

@@ -14,11 +14,10 @@ class UserController extends BaseController {
         let user = await this.getUserService().login(body);
         if (user) {
           ctx.session.data = {
-            userId: user.get('id')
+            userId: user.get('id'),
           };
 
           ctx.redirect('/');
-          return;
         }
       } 
 
@@ -37,7 +36,7 @@ class UserController extends BaseController {
         deadline: toolkit.timestamp() + 24*60*60*30,
       };
 
-      ctx.redirect('back', '/');
+      ctx.redirect('/');
       return;
     };
   }
