@@ -20,7 +20,15 @@ module.exports = class {
       return 0;
     }
 
-    this.user.get('id');
+    return this.user.get('id');
+  }
+
+  getNickname() {
+    if (!this.user) {
+      return '';
+    }
+
+    return this.user.get('nickname');
   }
 
   get(key) {
