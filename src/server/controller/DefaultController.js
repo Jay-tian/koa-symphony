@@ -8,8 +8,8 @@ class DefaultController extends BaseController {
 
   index() {
     return async (ctx) => {
-      let articles = await this.articleService().search({}, [], 0, 10);
-      console.log(toolkit.getSizeOfObject(articles));
+      let articles = await this.articleService().search({}, [['id', 'DESC']], 0, 20);
+      
       return ctx.render('index/index.twig', {
         user: ctx.state.user,
         articles: articles,

@@ -49,7 +49,7 @@ module.exports = class BaseDao{
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-      },
+      }
     };
 
     let config = Object.assign(defaultConfig, this.config());

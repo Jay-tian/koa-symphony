@@ -6,14 +6,29 @@
   <div class="main clearfix container">
     <div class="col-md-9">
       <ul class="article-list">
-        {% for article in articles %}
+        <li class="">
+          <div class="content">
+            <a class="title" target="_blank" href="">
+              浓浓粽香飘，我的端午情，多彩华夏画展
+            </a>
+            <div class="meta">
+              <a class="nickname" target="_blank" href="">
+                学无止境
+              </a>
+
+              <i class="iconfont icon-eye"></i> 4  
+              <i class="iconfont icon-like"></i> 5
+            </div>
+          </div>
+        </li>
+        {# {% for article in articles %}
           <li class="">
             <div class="content">
               <a class="title" target="_blank" href="">
                 {{ article.dataValues.title }}
               </a>
-              {# <p class="abstract">
-              </p> #}
+              <p class="abstract">
+              </p>
               <div class="meta">
                 <a class="nickname" target="_blank" href="">
                   
@@ -27,26 +42,8 @@
               </div>
             </div>
           </li>
-        {% endfor %}
-      </ul>
-
-      <div class="article-list">
-        {% for article in articles %}
-          <div class="item">
-            <div class="title text-overflow">
-              <a href="{{ path('article_detail', {id: article.id}) }}">{{ article.title }}</a>
-            </div>
-            <div class="summary">
-              {{ article.content|filter_html|substr(150) }}
-            </div>
-            <div class="meta">
-              <span><i class="iconfont blog-time"></i>{{ article.create_time|date('Y年m月d日 H:i') }}</span>
-              <span><i class="iconfont blog-view text-md"></i>3123</span>
-              {# <span>喜欢数</span> #}
-            </div>
-          </div>
-        {% endfor %}
-      </div>        
+        {% endfor %} #}
+      </ul>      
     </div>
     <div class="col-md-3">
       <ul class="apps">
