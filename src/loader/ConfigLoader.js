@@ -1,7 +1,7 @@
 const process = require('process');
 const path = require('path');
 const fs = require('fs');
-const toolkit = require('../../common/toolkit.js');
+const toolkit = require('../toolkit/index.js');
 
 let rootPath = process.cwd();
 let parametersPath = path.join(rootPath, 'config/parameters.js');

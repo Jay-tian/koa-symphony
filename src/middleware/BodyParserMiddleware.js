@@ -1,7 +1,7 @@
 const koaBody = require('koa-body');
 const path = require('path');
 const parameters = require('../loader/ConfigLoader.js');
-const toolkit = require('../../common/toolkit.js');
+const toolkit = require('../toolkit/index.js');
 
 module.exports = {
   priority: 0,

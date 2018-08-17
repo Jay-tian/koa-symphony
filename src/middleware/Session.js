@@ -1,5 +1,5 @@
 const session = require('koa-session');
-const toolkit = require('../../common/toolkit.js');
+const toolkit = require('../toolkit/index.js');
 
 class Store {
   constructor() {

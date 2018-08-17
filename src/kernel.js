@@ -10,7 +10,7 @@ global.parameters = require('./loader/ConfigLoader.js');
 global.service = require('./loader/ServiceLoader.js');
 require('./loader/TwigExtensionLoader.js');
 const session = require('./middleware/Session.js');
-const toolkit = require('../common/toolkit.js');
+const toolkit = require('./toolkit/index.js');
 const app = new Koa(); 
 
 session(app);
