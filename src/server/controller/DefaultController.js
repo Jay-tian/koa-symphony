@@ -1,14 +1,24 @@
-const BaseController = require('./Base');
+const BaseController = require('./BaseController');
+const toolkit = require('../../common/toolkit.js');
 
 class DefaultController extends BaseController {
   constructor(){
     super();
   }
-  
+
   index() {
-    return async (ctx, next) => { 
-      return ctx.render('index/index.twig', {});
+    return async (ctx) => {
+      let articles = await this.articleService().search({}, [['id', 'DESC']], 0, 20);
+      
+      return ctx.render('index/index.twig', {
+        user: ctx.state.user,
+        articles: articles,
+      });
     };
+  }
+
+  articleService() {
+    return this.createService('Article/ArticleService');
   }
 }
 

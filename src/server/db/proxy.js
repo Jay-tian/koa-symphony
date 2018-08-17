@@ -1,30 +1,14 @@
 class ProxyDao {
-  constructor(){
-    this.pool = [];
-    this.proxyMethods = ['create'];
+  constructor(dao) {
+    this.dao = dao;
   }
 
-  dao(name) {
-    return this.pool[name] ? this.pool[name] : require('dao/'+name);
-  }
-
-  execute(method) {
-    this.before();
-    console.log(method);
-    this.after();
-  }
-
-  before() {
-
-  }
-
-  after() {
-
-  }
-
-  create(parameter) {
-    console.log(parameter);
-  }
 }
 
-module.exports = ProxyDao;
+module.exports = function (db) {
+  return new Proxy(db, {
+    get: function(target, name){
+      return name in target ? target[name] : 37;
+    }
+  });
+}

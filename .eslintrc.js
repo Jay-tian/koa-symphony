@@ -7,7 +7,10 @@ module.exports = {
     },
     "globals": {
       "fullpage": true,
-      "Swiper": true
+      "Swiper": true,
+      "particlesJS": true,
+      "__dirname": true,
+      "editormd": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

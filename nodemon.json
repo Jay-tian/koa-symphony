@@ -10,10 +10,11 @@
       "js": "node --harmony"
   },
   "watch": [
-
+    "src/common",
+    "src/server"
   ],
   "env": {
       "NODE_ENV": "development"
   },
-  "ext": "js json"
+  "ext": "js json twig"
 }

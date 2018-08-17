@@ -1,4 +1,3 @@
-
 const parameters = require('../loader/ConfigLoader.js');
 let middleware =  async (ctx, next) => {
   ctx.state.version = parameters.version;
@@ -7,6 +6,6 @@ let middleware =  async (ctx, next) => {
 };
 
 module.exports = {
-  priority: 20,
+  priority: 0,
   middleware: middleware,
 };

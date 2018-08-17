@@ -3,10 +3,14 @@ const parameters = require('../loader/ConfigLoader.js');
 const path = require('path');
 
 let middleware = staticCache(path.join(parameters.rootPath, '/public/'), {
-  maxAge: 365 * 24 * 60 * 60
+  maxAge: 365 * 24 * 60 * 60,
+  gzip: true,
+  usePrecompiledGzip: true,
+  preload: false,
+  dynamic: true,
 });
 
 module.exports = {
-  priority: 15,
+  priority: 0,
   middleware: middleware
 };

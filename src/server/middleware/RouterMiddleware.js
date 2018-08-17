@@ -6,6 +6,6 @@ routers.forEach(function(router) {
 }, this);
 
 module.exports = {
-  priority: 10,
+  priority: 50,
   middleware: middleware,
 };

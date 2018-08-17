@@ -16,6 +16,15 @@ let setting = {
   purifyCssPaths: purifyCssPaths,
   assetJs: false,
   assetName: 'webpack.assets.json',
+  alias: {
+    common: path.join(rootPath, 'src/common'),
+  },
+  libs: rootPath + '/src/client/js/libs/',
+  copyLibs: [
+    'swiper/dist',
+    'jquery/dist',
+    'editor.md/',
+  ],
 };
 
 module.exports = setting;

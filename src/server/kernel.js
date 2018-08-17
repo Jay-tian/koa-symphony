@@ -1,14 +1,23 @@
 const Koa = require('koa');
 const path = require('path');
 const glob = require('glob');
-const parameters = require('./loader/ConfigLoader.js');
+global.koaSymphony = {
+  parameters: require('./loader/ConfigLoader.js'),
+  service: require('./loader/ServiceLoader.js'),
+};
+
+global.parameters = require('./loader/ConfigLoader.js');
+global.service = require('./loader/ServiceLoader.js');
 require('./loader/TwigExtensionLoader.js');
-const toolkit = require('../common/tookit.js');
-const app = new Koa();
+const session = require('./middleware/Session.js');
+const toolkit = require('../common/toolkit.js');
+const app = new Koa(); 
+
+session(app);
 
 //自动加载中间件
 let middlewarePaths = glob.sync(path.join(__dirname, './middleware/*Middleware.js'));
-middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(parameters.serverPath, 'middleware/*Middleware.js'))));
+middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(global.parameters.serverPath, 'middleware/*Middleware.js'))));
 let middlewares = {};
 middlewarePaths.forEach(function(path) {
   let data = require(path);
@@ -19,7 +28,10 @@ middlewarePaths.forEach(function(path) {
   }
 });
 
-let sort = Object.keys(middlewares).sort().reverse();
+let sort = Object.keys(middlewares).sort(function (x,y) {
+  return x-y;
+});
+
 sort.forEach(function(key) {
   middlewares[key].forEach(function(mdw) {
     if (Array.isArray(mdw)) {
@@ -31,16 +43,5 @@ sort.forEach(function(key) {
     }
   });
 }, this);
-
-//  todo 加载service
-// app.use(async (ctx, next) => {
-//   const serviceManage = new ServiceManage();
-//   ctx.state.serviceManage = serviceManage;
-//   await next();
-// });
-// app.use(async (ctx, next) => {
-//   let userService = ctx.state.serviceManage.create('user/UserService');
-//   await next();
-// });
 
 module.exports = app;
