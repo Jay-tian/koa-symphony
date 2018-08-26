@@ -1,6 +1,8 @@
 
 const db = require('../db/init.js');
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 module.exports = class BaseDao{
   constructor(table) {
     this.db = db;
@@ -40,7 +42,14 @@ module.exports = class BaseDao{
   get() {
   }
 
-  findByIds() {
+  findByIds(ids) {
+    return this.model.findAll({
+      where: {
+        id: {
+          [Op.in]: ids,
+        } 
+      }
+    });
   }
 
   createModel() {

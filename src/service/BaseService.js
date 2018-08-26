@@ -17,7 +17,8 @@ module.exports = class BaseService{
     return this.getCurrentDao().getById(id);
   }
 
-  findByIds() {
+  findByIds(ids) {
+    return this.getCurrentDao().findByIds(ids);
   }
 
   createDao(name) {

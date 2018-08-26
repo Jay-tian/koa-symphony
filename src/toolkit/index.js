@@ -1,13 +1,12 @@
 const xxtea = require('./xxtea.js');
 const fs = require('fs');
 
-exports.arrayIndex = function(data, column){
+exports.arrayColumn = function(data, column, index){
   let newData = [];
-  if (!data) {
-    return [];
-  }
+
   data.forEach(f => {
-    newData.push(f[column]);
+    let d = f[index] ? f[index] : f;
+    newData.push(d[column]);
   });
 
   return newData;
