@@ -16,10 +16,10 @@ module.exports = {
     
     return assets[urls[0]][urls[1]];
   },
-  url: function(url) {
+  url: function(url, params = {}) {
     let path;
     routers.every(function(router) {
-      path = router.url(url);
+      path = router.url(url, params);
       return path instanceof Error;
     });
 
