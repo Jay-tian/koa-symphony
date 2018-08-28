@@ -11,9 +11,9 @@ let middleware =  async (ctx, next) => {
   } else {
     ctx.session.data = {userId: 0};
   }
+
   let user  = await userDao.getById(userId);
   ctx.state.user = new User(user);
-  
   await next();
 };
 

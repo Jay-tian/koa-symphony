@@ -5,14 +5,12 @@
     "editor.md": "^1.5.0",
     "forever": "^0.15.3",
     "jay-fullpage.js": "^2.9.7",
-    "jay-webpack-scaffold": "1.1.16",
     "jquery-validation": "^1.17.0",
     "koa": "^2.5.0",
     "koa-body": "^4.0.4",
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.2",
     "koa-static-cache": "^5.1.2",
-    "npm": "^5.8.0",
     "particles.js": "^2.0.0",
     "sequelize": "^4.37.6",
     "swiper": "^4.2.5",
@@ -20,6 +18,7 @@
     "twig": "^1.11.0"
   },
   "devDependencies": {
+    "jay-webpack-scaffold": "1.1.16",
     "eslint": "^4.18.2",
     "eslint-plugin-react": "^7.7.0",
     "koa-webpack": "^3.0.2",
