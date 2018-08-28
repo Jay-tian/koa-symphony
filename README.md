@@ -1,22 +1,21 @@
-# koa-easy
+# koa-symphony
 
 ## start
-基于 koa2的简单通用的系统。
-集成了twig引擎，webpack4
+基于 koa2的框架。
+采用三层架构，mvc思想，分离视图层和业务处。
+集成了twig.js，webpack4，sequelize等组件。
+方便了数据库查询，以及模版渲染
+
 请使用 https://www.npmjs.com/package/cli-koa 生成项目
 ```
 yarn global add cli-koa
 cli-koa init <projectName>
-
 ```
 
-## 参数说明
-  rootPath: 项目根目录
-  serverPath: 服务端文件地址
-  distAddress: 静态资源地址，便于动静态分离
-
-## todo
-3. 数据库主从备份
-4. 缓存服务器
-5. cluster负载均衡
+## 目录及参数说明
+```
+config: 配置文件目录
+config/db.json: 数据库配置文件
+config/parameters.js：项目配置文件
+```
 
