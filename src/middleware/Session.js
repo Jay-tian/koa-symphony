@@ -3,7 +3,7 @@ const toolkit = require('../toolkit/index.js');
 
 class Store {
   constructor() {
-    this.sessionDao = global.service.load('dao', 'system/sessionDao.js');
+    this.sessionDao = global.service.load('dao', 'system/SessionDao.js');
   }
 
   async get(sid) {
