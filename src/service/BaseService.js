@@ -6,7 +6,8 @@ module.exports = class BaseService{
     return this.getCurrentDao().delete(id);
   }
 
-  count() {
+  count(condition) {
+    return this.getCurrentDao().delete(condition);
   }
 
   update(id, fields) {

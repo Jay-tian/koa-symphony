@@ -26,8 +26,8 @@ module.exports = class BaseDao{
     return this.model.destroy({'where':{'id':id}});
   }
 
-  count() {
-    
+  count(condition) {
+    return this.model.count({ where: condition});
   }
 
   search(condition, order, start, limit) {
@@ -37,9 +37,6 @@ module.exports = class BaseDao{
       offset: start,
       limit: limit
     });
-  }
-
-  get() {
   }
 
   findByIds(ids) {

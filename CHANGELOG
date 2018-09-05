@@ -1,3 +1,6 @@
+1.0.15
+新增：baseService新增count，delete方法
+
 1.0.13
 新增： 内置user，session模块
 

@@ -22,7 +22,7 @@
     "restart": "forever restart app.js"
   },
   "name": "koa-symphony",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "koa2 webpack4 koa-router sequelize twig eslint",
   "main": "./src/server/kernel.js",
   "repository": "https://github.com/Jay-tian/koaeasy.git",
