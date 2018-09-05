@@ -2,11 +2,16 @@ module.exports = class BaseService{
   constructor() {
   }
 
-  delete() {
-    
+  delete(id) { 
+    return this.getCurrentDao().delete(id);
   }
 
   count() {
+  }
+
+  update(id, fields) {
+    this.getCurrentDao().update(id, fields);
+    return this.getCurrentDao().getById(id);
   }
 
   search(condition, order, start, limit) {
