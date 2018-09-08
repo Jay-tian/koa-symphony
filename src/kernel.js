@@ -15,7 +15,7 @@ session(app);
 
 //自动加载中间件
 let middlewarePaths = glob.sync(path.join(__dirname, './middleware/*Middleware.js'));
-middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(global.symphony.serverPath, 'middleware/*Middleware.js'))));
+middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(global.symphony.parameters.serverPath, 'middleware/*Middleware.js'))));
 let middlewares = {};
 middlewarePaths.forEach(function(path) {
   let data = require(path);

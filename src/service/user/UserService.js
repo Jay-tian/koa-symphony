@@ -18,7 +18,7 @@ class UserService extends BaseService{
       salt: salt,
       roles: '|user|',
       registerIp: fields.registerIp,
-      email: Math.random().toString(36).substr(2)+'0627@qq.com',
+      email: fields.email,
       loginIp: fields.registerIp,
       registerTime: toolkit.timestamp(),
     }; 

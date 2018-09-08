@@ -1,6 +1,14 @@
 const xxtea = require('./xxtea.js');
 const fs = require('fs');
 
+exports.encryptToBase64 = function(value, key = 'symphony') {
+  return xxtea.encryptToBase64(value, key);
+};
+
+exports.decryptFromBase64 = function(key) {
+  return xxtea.decryptFromBase64(key);
+}
+
 exports.arrayColumn = function(data, column, index){
   let newData = [];
 

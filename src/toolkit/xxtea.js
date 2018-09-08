@@ -436,7 +436,7 @@ function decryptFromBase64(data, key) {
   return decrypt(xxtea.atob(data), key);
 }
 
-xxtea.XXTEA = {
+module.exports = {
   utf8Encode: utf8Encode,
   utf8Decode: utf8Decode,
   encrypt: encrypt,
@@ -444,5 +444,3 @@ xxtea.XXTEA = {
   decrypt: decrypt,
   decryptFromBase64: decryptFromBase64
 };
-
-module.exports = xxtea;
