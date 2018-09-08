@@ -2,7 +2,7 @@ const session = require('koa-session');
 
 class Store {
   constructor() {
-    this.sessionDao = global.service.load('dao', 'system/SessionDao.js');
+    this.sessionDao = global.symphony.service.load('dao', 'system/SessionDao.js');
   }
 
   async get(sid) {

@@ -28,6 +28,6 @@ module.exports = class BaseService{
   }
 
   createDao(name) {
-    return global.service.load('dao', name);
+    return global.symphony.service.load('dao', name);
   }
 };

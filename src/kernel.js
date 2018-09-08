@@ -1,13 +1,11 @@
 const Koa = require('koa');
 const path = require('path');
 const glob = require('glob');
-global.koaSymphony = {
+global.symphony = {
   parameters: require('./loader/ConfigLoader.js'),
   service: require('./loader/ServiceLoader.js'),
 };
-
-global.parameters = require('./loader/ConfigLoader.js');
-global.service = require('./loader/ServiceLoader.js');
+require('./application/mailer.js');
 require('./loader/TwigExtensionLoader.js');
 const session = require('./middleware/Session.js');
 const toolkit = require('./toolkit/index.js');
@@ -17,7 +15,7 @@ session(app);
 
 //自动加载中间件
 let middlewarePaths = glob.sync(path.join(__dirname, './middleware/*Middleware.js'));
-middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(global.parameters.serverPath, 'middleware/*Middleware.js'))));
+middlewarePaths = toolkit.unique(middlewarePaths.concat(glob.sync(path.join(global.symphony.serverPath, 'middleware/*Middleware.js'))));
 let middlewares = {};
 middlewarePaths.forEach(function(path) {
   let data = require(path);

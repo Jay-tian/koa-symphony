@@ -7,6 +7,6 @@ module.exports = class BaseController{
   }
 
   createService(name) {
-    return global.service.load('service', name);
+    return global.symphony.service.load('service', name);
   }
 };

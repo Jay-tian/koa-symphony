@@ -1,6 +1,6 @@
 const User = require('../kernel/UserProvider.js');
-const userDao = global.service.load('dao', 'user/UserDao.js');
-const sessonDao = global.service.load('dao', 'system/SessionDao.js');
+const userDao = global.symphony.service.load('dao', 'user/UserDao.js');
+const sessonDao = global.symphony.service.load('dao', 'system/SessionDao.js');
 const toolkit = require('../toolkit/index.js');
 
 let middleware =  async (ctx, next) => {
