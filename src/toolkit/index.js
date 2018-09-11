@@ -1,12 +1,28 @@
 const xxtea = require('./xxtea.js');
 const fs = require('fs');
 
+exports.randomNum = function(digit) {
+  return Math.ceil(Math.random() * 10**digit);
+}
+
 exports.encryptToBase64 = function(value, key = 'symphony') {
   return xxtea.encryptToBase64(value, key);
 };
 
-exports.decryptFromBase64 = function(key) {
-  return xxtea.decryptFromBase64(key);
+exports.decryptFromBase64 = function(value, key = 'symphony') {
+  return xxtea.decryptFromBase64(value, key);
+}
+
+exports.objectParts = function(data, parts) {
+  let newData = {};
+  let keys = Object.keys(data);
+  keys.forEach(value => {
+    if (parts.indexOf(value) >= 0) {
+      newData[value] = data[value];
+    }
+  });
+
+  return newData;
 }
 
 exports.arrayColumn = function(data, column, index){

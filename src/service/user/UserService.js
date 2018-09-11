@@ -12,16 +12,15 @@ class UserService extends BaseService{
     let salt =  crypto.randomBytes(16).toString('hex');
     let signture = crypto.createHmac('sha1', salt);//定义加密方式
     let password = signture.update(fields.password).digest().toString('base64');
-    let user = {
-      nickname: fields.nickname,
+
+    let user = toolkit.objectParts(fields, ['nickname', 'registerIp', 'email', 'locked']);
+    user = Object.assign(user, {
       password: password,
       salt: salt,
       roles: '|user|',
-      registerIp: fields.registerIp,
-      email: fields.email,
       loginIp: fields.registerIp,
       registerTime: toolkit.timestamp(),
-    }; 
+    }); 
 
     return await this.getCurrentDao().create(user);
   }

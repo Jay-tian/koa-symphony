@@ -21,6 +21,9 @@ class UserDao extends BaseDao{
         allowNull: false,
         get: function(name) {
           let roles = this.getDataValue(name);
+          if (!roles) {
+            return {};
+          }
           
           return roles.replace(/(^\|*)|(\|*$)/g, '').split('|');
         }
