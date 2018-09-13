@@ -26,13 +26,21 @@ class UserService extends BaseService{
   }
 
   async login(fields) {
-    let user = await this.getCurrentDao().getByNickname(fields.nickname);
+    let user = await this.getByNickname(fields.nickname);
     if (!user) {
       return;
     }
 
     let signture = crypto.createHmac('sha1', user.get('salt'));//定义加密方式
     return user.password == signture.update(fields.password).digest().toString('base64') ? user : null;  
+  }
+
+  getByNickname(nickname) {
+    return this.getCurrentDao().getByNickname(nickname);
+  }
+
+  getByEmail(email) {
+    return this.getCurrentDao().getByEmail(email);
   }
 
   getCurrentDao() {
