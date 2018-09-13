@@ -35,6 +35,14 @@ class UserService extends BaseService{
     return user.password == signture.update(fields.password).digest().toString('base64') ? user : null;  
   }
 
+  countByNickname(nickname) {
+    return this.getCurrentDao().countByNickname(nickname);
+  }
+
+  countByEmail(email) {
+    return this.getCurrentDao().countByEmail(email);
+  }
+
   getByNickname(nickname) {
     return this.getCurrentDao().getByNickname(nickname);
   }

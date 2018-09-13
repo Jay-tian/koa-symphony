@@ -6,6 +6,14 @@ class UserDao extends BaseDao{
     super('user');
   }
 
+  countByNickname(nickname) {
+    return this.count({nickname: nickname});
+  }
+
+  countByEmail(email) {
+    return this.count({email: email});
+  }
+
   getByNickname(nickname) {
     return this.model.findOne({where : {nickname: nickname}});
   }
