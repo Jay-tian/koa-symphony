@@ -6,6 +6,9 @@ class UserDao extends BaseDao{
     super('user');
   }
 
+  lockById() {  
+  }
+
   countByNickname(nickname) {
     return this.count({nickname: nickname});
   }
