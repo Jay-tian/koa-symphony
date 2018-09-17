@@ -5,8 +5,11 @@ global.symphony = {
   parameters: require('./loader/ConfigLoader.js'),
   service: require('./loader/ServiceLoader.js'),
 };
+
 require('./application/mailer.js');
+require('./application/cropper.js');
 require('./loader/TwigExtensionLoader.js');
+
 const session = require('./middleware/Session.js');
 const toolkit = require('./toolkit/index.js');
 const app = new Koa(); 
