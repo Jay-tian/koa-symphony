@@ -2,10 +2,11 @@ const easyimage =  require('easyimage');
 const stringRandom = require('string-random');
 const path = require('path');
 const fs = require('fs');
+const toolkit = require('../toolkit/index');
 
 global.symphony.cropper = function(filePath, params) {
   try {
-    let dst = stringRandom(16);
+    let dst = stringRandom(16)+toolkit.timestamp();
     dst = path.dirname(filePath)+'/'+dst+'.'+path.extname(filePath)
 
     easyimage.crop({
