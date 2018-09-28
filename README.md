@@ -22,5 +22,6 @@ config/parameters.js：项目配置文件
 
 ## 安装 graphicsmagick
 ```
- brew install graphicsmagick
+ mac: brew install graphicsmagick
+ unix: apt install graphicsmagick
 ```
