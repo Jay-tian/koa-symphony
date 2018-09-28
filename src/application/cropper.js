@@ -1,8 +1,8 @@
 const gm = require('gm');
 const stringRandom = require('string-random');
 const path = require('path');
-const fs = require('fs');
 const toolkit = require('../toolkit/index');
+const fs = require('fs');
 
 global.symphony.cropper = function(filePath, params) {
   let dst = stringRandom(16)+toolkit.timestamp();
