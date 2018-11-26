@@ -12,6 +12,7 @@ yarn global add cli-koa
 cli-koa init <projectName>
 ```
 
+
 ## 目录及参数说明
 ```
 config: 配置文件目录
@@ -19,3 +20,35 @@ config/db.json: 数据库配置文件
 config/parameters.js：项目配置文件
 ```
 
+## 安装 ImageMagick
+```
+安装说明： http://www.imagemagick.org/script/install-source.php
+wget -c https://imagemagick.org/download/ImageMagick.tar.gz
+tar xvzf ImageMagick.tar.gz
+cd 解压目录
+./configure
+make
+sudo make install
+sudo ldconfig /usr/local/lib
+/usr/local/bin/convert logo: logo.gif
+```
+
+## ImageMagick 依赖
+```
+wget http://www.imagemagick.org/download/delegates/zlib-1.2.11.tar.gz
+tar zvxf zlib-1.2.11.tar.gz
+cd zlib-1.2.11
+./configure
+make
+make install
+
+wget http://www.imagemagick.org/download/delegates/libpng-1.6.31.tar.gz
+tar zvxf libpng-1.6.31.tar.gz
+cd libpng-1.6.31/
+./configure
+make
+make install
+
+convert -list format
+查看当前支持文件类型
+```

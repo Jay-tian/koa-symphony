@@ -49,7 +49,7 @@ class Store {
 
 const CONFIG = {
   key: 'SESSID',
-  maxAge: 86400000,
+  maxAge: 86400000 * 365,
   overwrite: true,
   httpOnly: true,
   signed: false,
