@@ -5,6 +5,10 @@ class SessionService extends BaseService{
     super();
   }
 
+  gc() {
+    // 删除过期时间
+  }
+
   updateDeadline(id, deadline) {
     return this.getCurrentDao().update(id, {deadline: deadline});
   }
