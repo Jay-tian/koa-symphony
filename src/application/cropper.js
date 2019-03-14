@@ -10,7 +10,7 @@ global.symphony.cropper = function(filePath, params) {
   return new Promise(function (resolve, reject) {
     gm(filePath).crop(params.width, params.height, params.x, params.y)
     .write(dst, function (err) {
-      if (!err) {
+      if (err) {
         reject(err);
       }
 
