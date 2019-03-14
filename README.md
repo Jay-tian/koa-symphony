@@ -20,6 +20,15 @@ config/db.json: 数据库配置文件
 config/parameters.js：项目配置文件
 ```
 
+## 中间件的优先级
+优先级越小，越早执行
+```
+    LestenerMiddleware: 用户权限鉴权 优先级10
+    BodyParserMiddleware: 前台查询参数处理 优先级 0
+    RouterMiddleware: 路由处理 优先级50
+    StaticMiddleware: 静态资源文件处理 优先级0
+```
+
 ## 安装 ImageMagick
 ```
 安装说明： http://www.imagemagick.org/script/install-source.php

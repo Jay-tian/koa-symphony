@@ -17,7 +17,7 @@
     "nodemon": "^1.17.3"
   },
   "scripts": {
-    "server-dev": "NODE_ENV=development nodemon app.js",
+    "dev": "NODE_ENV=development nodemon app.js",
     "fix": "./node_modules/.bin/eslint --fix",
     "start": "set NODE_ENV=production & forever start app.js",
     "stop": "forever stop app.js",

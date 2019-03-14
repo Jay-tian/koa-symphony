@@ -10,8 +10,7 @@
       "js": "node --harmony"
   },
   "watch": [
-    "src/common",
-    "src/server"
+    "src"
   ],
   "env": {
       "NODE_ENV": "development"
