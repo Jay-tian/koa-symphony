@@ -1,15 +1,11 @@
 let middleware =  async (ctx, next) => {
-  let methods = {
-    post: 'add',
-    delete: 'delete',
-    get: 'get',
-    patch: 'update',
-  };
-  let method = ctx.request.method;
+  if (0 == ctx.request.url.indexOf('/api/')) {
+    ctx.body =  JSON.stringify({});
+    ctx.response.status = 404;
+    return;
+  }
   
-  ctx.body =  JSON.stringify({});
-  ctx.response.status = 404;
-  return;
+  await next();
 };
 
 module.exports = {
