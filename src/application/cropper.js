@@ -10,12 +10,12 @@ global.symphony.cropper = function(filePath, params) {
   return new Promise(function (resolve, reject) {
     gm(filePath).crop(params.width, params.height, params.x, params.y)
     .write(dst, function (err) {
+      if (!err) {
+        reject(err);
+      }
+
       fs.unlink(filePath);
       resolve(dst);
-      if (!err) {
-        console.log('crazytown has arrived');
-        reject(dst);
-      }
     })
   });
 };
