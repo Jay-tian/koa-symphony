@@ -1,4 +1,5 @@
 const session = require('koa-session');
+const toolkit = require('../toolkit/index.js');
 
 class Store {
   constructor() {
@@ -36,7 +37,7 @@ class Store {
     };
     let sess = {
       sessId: session,
-      deadline: parseInt(opts._expire / 1000) + opts._maxAge,
+      deadline: toolkit.timestamp() + 24*60*60,
       data: JSON.stringify(Object.assign(data, opts.data)),
     };
 
@@ -49,7 +50,7 @@ class Store {
 
 const CONFIG = {
   key: 'SESSID',
-  maxAge: 86400000,
+  maxAge: 86400000 * 365,
   overwrite: true,
   httpOnly: true,
   signed: false,
