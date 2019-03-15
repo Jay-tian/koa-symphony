@@ -62,3 +62,12 @@ make install
 convert -list format
 查看当前支持文件类型
 ```
+
+
+## ubuntu安装
+
+```
+sudo apt-get update
+sudo apt-get install graphicsmagick
+sudo apt-get install imagemagick
+```

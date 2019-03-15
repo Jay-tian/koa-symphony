@@ -12,10 +12,10 @@ global.symphony.cropper = function(filePath, params) {
     .write(dst, function (err) {
       if (err) {
         reject(err);
+      } else {
+        fs.unlink(filePath);
+        resolve(dst);
       }
-
-      fs.unlink(filePath);
-      resolve(dst);
     })
   });
 };
