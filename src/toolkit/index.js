@@ -1,5 +1,6 @@
 const xxtea = require('./xxtea.js');
 const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 exports.randomNum = function(digit) {
   return Math.ceil(Math.random() * 10**digit);
@@ -68,7 +69,7 @@ exports.unique = function(data) {
 
 exports.checkDirExist = function(p){
   if (!fs.existsSync(p)) {
-    fs.mkdirSync(p);
+    mkdirp(p);
   }
 };
 
