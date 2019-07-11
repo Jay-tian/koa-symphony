@@ -2,6 +2,16 @@ const xxtea = require('./xxtea.js');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 
+exports.index = function (datas, column) {
+  let newDatas = {};
+
+  datas.forEach(d => {
+    newDatas[d.dataValues[column]] = d;
+  });
+
+  return newDatas;
+};
+
 exports.randomNum = function(digit) {
   return Math.ceil(Math.random() * 10**digit);
 }

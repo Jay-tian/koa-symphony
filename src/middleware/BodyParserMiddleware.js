@@ -20,7 +20,8 @@ module.exports = {
 
         let filePath = ['jpg', 'png', 'gif', 'jpeg'].indexOf(ext) >= 0 ? 'images' : 'files';
         
-        filePath += '/'+toolkit.getYMD();
+        let time = new Date();
+        filePath += '/'+ time.getFullYear() + time.getMonth() + time.getDate();
         filePath = path.join(parameters.rootPath, 'public/data/'+filePath);
         toolkit.checkDirExist(filePath);
 

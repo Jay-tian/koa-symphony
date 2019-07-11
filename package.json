@@ -12,7 +12,7 @@
     "nodemailer": "^4.6.8",
     "sequelize": "^4.37.6",
     "string-random": "^0.1.0",
-    "tsj-koa-views": "^6.1.4",
+    "tsj-koa-views": "^6.1.5",
     "twig": "^1.11.0"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "restart": "forever restart app.js"
   },
   "name": "koa-symphony",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "koa2 webpack4 koa-router sequelize twig eslint",
   "main": "./src/server/kernel.js",
   "repository": "https://github.com/Jay-tian/koaeasy.git",
