@@ -10,7 +10,7 @@
     "mailer": "^0.6.7",
     "mysql2": "^1.6.1",
     "nodemailer": "^4.6.8",
-    "sequelize": "^4.37.6",
+    "sequelize": "^5.15.1",
     "string-random": "^0.1.0",
     "tsj-koa-views": "^6.1.6",
     "twig": "^1.11.0"
