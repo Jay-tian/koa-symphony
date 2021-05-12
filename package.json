@@ -9,7 +9,7 @@
     "koa-static-cache": "^5.1.2",
     "mailer": "^0.6.7",
     "mysql2": "^1.6.1",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "sequelize": "^4.37.6",
     "string-random": "^0.1.0",
     "tsj-koa-views": "^6.1.6",
